@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /partner/ - パートナー企業用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    .content__partner
+
+********************************************************************* */
+#main {
+    margin-right: -2.67vw;
+    margin-left: -2.67vw;
+    padding-right: 2.67vw;
+    padding-left: 2.67vw;
+}
+.content__partner {
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main {
+        margin-right: -2rem;
+        margin-left: -2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .content__partner {
+        max-width: 980px;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    #main {
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/* パートナー企業
+--------------------------------------------- */
+.main__content__headline {
+    font-size: 100%;
+    line-height: 1.4;
+    margin-top: 1.6em;
+}
+.partner__lead {
+    font-size: 73%;
+}
+.partner__content {
+    line-height: 1.4;
+    border-top: 1px solid #DCDCDC;
+    margin: 20px 0 40px;
+    padding: 30px 0 60px;
+    font-size: 73%;
+}
+.partner__logo {
+    max-width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.partner__logo + .partner__list {
+    margin-top: 1.5em;
+}
+.partner__list dl {
+    display: table-row;
+}
+.partner__list dt,
+.partner__list dd {
+    display: table-cell;
+    padding: .5em 0;
+}
+.partner__list dt {
+    padding-right: 20px;
+    position: relative;
+    white-space: nowrap;
+}
+.partner__list dt:after {
+    content: "：";
+    position: absolute;
+    right: 0;
+}
+.partner__list dd {
+    padding-left: 10px;
+}
+.partner__list + p {
+    margin-top: 2em;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__headline {
+        font-size: calc( 1.5rem + 12 * (100vw - 375px) / 825);
+        margin-top: 2.4em;
+    }
+    .partner__lead {
+        font-size: 90%;
+    }
+    .partner__logo {
+        max-width: 200px;
+    }
+    .partner__content {
+        margin: 40px 0 60px;
+        padding: 60px 0 100px;
+        font-size: 90%;
+    }
+    .partner__list dt,
+    .partner__list dd {
+        padding-right: 4em;
+        padding-left: 4em;
+    }
+    .partner__list dt {
+        padding-right: 40px;
+    }
+    .partner__list dd {
+        padding-left: 20px;
+    }
+    .partner__list + p {
+        padding-right: 4em;
+        padding-left: 4em;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content__headline {
+        font-size: 3.2rem;
+        margin-top: 3.2em;
+    }
+}

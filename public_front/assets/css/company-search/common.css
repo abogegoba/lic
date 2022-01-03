@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    company-search共通要素用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    .main__content - メインコンテンツ
+
+********************************************************************* */
+.main__content {
+    max-width: 970px;
+    margin: 0 auto 6em;
+}
+
+/* *********************************************************************
+
+    .company__info - 企業情報
+
+********************************************************************* */
+.company__info {
+    width: calc(70% - 1em);
+}
+
+/* .company__logo - 企業ロゴ
+--------------------------------------------- */
+.company__logo {
+    overflow: hidden;
+    position: relative;
+}
+.company__logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* 企業特徴＆タグのwrapper
+--------------------------------------------- */
+.company__info > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* .company__feature - 企業特徴
+--------------------------------------------- */
+.company__feature {
+    width: 100%;
+    margin: 0 .5em 0 -.25em;
+    letter-spacing: -0.5em;
+}
+.company__feature li {
+    display: inline-block;
+    margin-bottom: .25em;
+    padding: 0 .3em;
+    line-height: 1.5;
+    letter-spacing: normal;
+}
+.company__feature li:not(:last-child) {
+    border-right: solid 1px #333;
+}

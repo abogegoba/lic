@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    企業検索詳用CSS
+        /company-search/
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    .fnd-company - 企業検索フォーム
+
+********************************************************************* */
+.fnd-company {
+    margin-bottom: 2em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .fnd-company {
+        margin-bottom: 2em;
+    }
+}
+
+/* *********************************************************************
+
+    .result__company - 企業検索の結果
+
+********************************************************************* */
+.result__company {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto 5em;
+    /* VP:375 ~ 1200 : 12px ~ 16px */
+    font-size: calc( 1.2rem + 4 * (100vw - 375px) / 825);
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .result__company {
+        font-size: 1.2rem;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result__company > article {
+        width: 48%;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .result__company {
+        font-size: 1.6rem;
+    }
+}
+
+/* 各ボックス
+--------------------------------------------- */
+.result__company > article {
+    width: 100%;
+    max-width: 472px;
+    margin: auto;
+}
+.result__company > article + article {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: solid 1px #DCDCDC;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result__company > article {
+        width: 49%;
+        margin: 0 0 3em 0;
+    }
+    .result__company > article + article {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+/* 企業イメージ
+--------------------------------------------- */
+.result__company > article > picture {
+    display: block;
+    margin-bottom: 1em;
+    background-color: #FFF;
+    line-height: 0;
+}
+.result__company > article > picture img {
+    width: 100%;
+    height: calc((100vw - 2.67vw - 2.67vw) * 0.409859);
+    object-fit: contain;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result__company > article > picture img {
+        width: 472px;
+        height: 265px;
+    }
+}
+
+/* 企業情報
+--------------------------------------------- */
+.result__company header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.company__info h3 {
+    margin-bottom: .5em;
+    font-size: 150%;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result__company header {
+        margin-bottom: 1.3em;
+    }
+}
+
+/* .company__logo - 企業ロゴ
+--------------------------------------------- */
+.company__logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .company__logo {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* .company__feature - 企業特徴
+--------------------------------------------- */
+.company__feature {
+    font-size: 115%;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .company__feature {
+        font-size: 110%;
+        font-weight: bold;
+    }
+}
+
+/* ハッシュタグ
+--------------------------------------------- */
+.tag {
+    font-size: 110%;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .tag {
+        font-size: 105%;
+    }
+}
+
+/* 本文
+--------------------------------------------- */
+.result__company__body {
+    line-height: 1.55;
+}
+
+/* 企業紹介
+--------------------------------------------- */
+.result__company__body p:last-child {
+    word-break: break-all;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result__company__body p:last-child {
+        margin-top: 0.5em;
+    }
+}

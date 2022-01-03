@@ -1,0 +1,173 @@
+/* modal */
+#custome_modal_design,#custome_delete_modal_design {
+    border-radius: 20px;position: absolute;top: 50%;transform: translateY(-50%);
+    left: 0%;background: #FFF;width: 100%;margin: 0 auto;
+}
+#custome_modal_design>.main{padding: 0;}
+#custome_delete_modal_design>.main{padding: 30px;text-align: center;}
+#device_recommandation_container {font-weight: 700;text-align: justify;line-height: 1.2;padding: 70px 135px;}
+#device_recommandation_container>h2 {color: #2a2a2a;background: #fff;text-align: left;padding: 0;margin-bottom: 40px;font-size: 20px;}
+#custome_delete_modal_design>.main>h2 {color: #000;background: #fff;text-align: center;padding: 0;margin-bottom: 30px;font-size: 15px;}
+#device_recommandation_container>p {margin-bottom: .5em;color: #2a2a2a;font-size: 15px;text-align: left;}
+#custome_delete_modal_design>.main>p {margin-bottom: .5em;color: #2a2a2a;font-size: 15px;text-align: center;font-weight: 300;}
+#custome_delete_modal_design>.main>button {width: 150px;height: 35px;text-align: center;font-size: 13px;font-weight: 700;border-radius: 30px;}
+#custome_delete_modal_design>.main>button#delete_cancle{background: #000;margin-right: 20px;}
+#custome_delete_modal_design>.main>button#delete_ok{background: #B80110}
+#device_support {margin-top: calc(30px - .5em);}
+#device_support p {color: #2a2a2a;font-size: 15px;text-align: left;}
+#device_pc_browser,#device_mobile_browser {border-left: 3px solid #0081CC;padding-left: 15px;margin-bottom: 15px;}
+#device_pc_browser>p,#device_mobile_browser>p {font-size:15px;margin-bottom: 10px;}
+#device_pc_browser ul,#device_mobile_browser ul {display: inline-grid;min-width: 40%;padding-left: 0px;font-size: 13px;}
+#device_pc_browser ul li, #device_mobile_browser ul li {list-style: disc;margin-left: 30px;font-size: 13px;color: #2a2a2a;}
+#device_support .close_button {text-align: center;box-sizing: border-box;margin: 75px 0px 0px 0;}
+#device_support .close_button a {cursor: pointer;padding: 17px 81px;background: #434343;color: #fff;border-radius: 5px;}
+
+@media screen and (min-width: 1201px){
+    #custome_modal_design{
+        width: 1200px;
+        left: calc((100% - 1200px)/2);
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 1200px){
+    #custome_modal_design{
+        width: calc(100% - 2rem);
+        left: 1rem;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 479px){
+    #custome_delete_modal_design{
+        width: 250px;
+        left: calc((100% - 250px)/2);
+    }
+    #custome_delete_modal_design>.main>h2 {
+        margin-bottom: 27px;
+    }
+    #custome_delete_modal_design>.main {padding: 27px;}
+    #custome_delete_modal_design>.main>button#delete_cancle{margin-right: 0px;}
+    #custome_delete_modal_design>.main>button#delete_ok{margin-top: 20px;}
+}
+@media screen and (min-width: 480px) {
+    #custome_delete_modal_design {
+        width: 450px;
+        left: calc((100% - 450px)/2);
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    #custome_modal_design{
+        width: calc(100% - 2rem);
+        left: 1rem;
+    }
+    #device_recommandation_container {padding: 30px;}
+    #device_recommandation_container>h2 {margin-bottom: 20px;}
+    #device_recommandation_container>p,#custome_delete_modal_design>.main>p {font-size: 12px;}
+    #device_support p {font-size: 10px;margin-top: 20px}
+    #device_mobile_browser {margin-bottom: 15px;}
+    #device_pc_browser>p,#device_mobile_browser>p,#device_pc_browser ul,#device_mobile_browser ul,#device_pc_browser ul li, #device_mobile_browser ul li {font-size:14px;}
+    #device_support .close_button a {padding: 9px 48px;}
+}
+
+/* Top */
+#browser_recommandation_container {padding: 0px 280px;text-align: justify;line-height: 1.5;}
+#browser_recommandation_container>p {margin-bottom: 1.5em;font-weight: 700;color: #2a2a2a;font-size: 15px;}
+#browser_support {margin-bottom: 1.5em;}
+#browser_support p {font-weight: 700;color: #2a2a2a;}
+#pc_browser,#mobile_browser {border-left: 3px solid #0081CC;padding-left: 15px;margin-bottom: 15px;}
+#pc_browser ul,#mobile_browser ul {display: inline-grid;min-width: 40%;}
+#pc_browser ul li, #mobile_browser ul li {list-style: disc;margin-left: 30px;}
+
+@media  only screen and (max-width: 767px) and (min-width: 320px){
+    #browser_recommandation_container {padding: 0px 25px;}
+    #browser_support {font-size: 15px;}
+}
+@media  only screen and (max-width: 1024px) and (min-width: 768px){
+    #browser_recommandation_container {padding: 0px 120px;}
+    #browser_support {font-size: 15px;}
+}
+@media  screen and (min-width: 600px){
+    #device_capability_top {
+        top: 80px;
+    }
+}
+@media  screen and (min-width: 320px) and (max-width: 599px){
+    #device_capability_top {
+        top: 50px;
+    }
+}
+
+#device_capability_top {
+    padding-top: .75em;
+    padding-bottom: .75em;
+    background: #0081CC;
+    color: #FFF;
+    font-size: calc( 1.2rem + 2 * (100vw - 375px) / 825);
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+}
+#device_capability_top img {
+    width: 13px;
+    margin-right: 5px;
+}
+#device_capability_top a {
+    color: #FFF;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 3px 15px;
+    margin-left: 10px;
+}
+#device_capability_top a:hover{
+    opacity: 1;
+}
+
+
+/* よくある質問 */
+#browser_recommandation_container-qa {padding: 1em 0 0 0 ;text-align: justify;line-height: 1.5;font-size: 13px;margin-left:2em;}
+#browser_recommandation_container-qa>p {margin-bottom: 1.5em;font-weight: normal;color: #2a2a2a;font-size: 15px;}
+
+@media  only screen and (min-width: 768px){
+    #browser_recommandation_container-qa {padding: 1em 0 0 0;}
+}
+@media  only screen and (min-width: 1024px){
+    #browser_recommandation_container-qa {padding: 1em 0 0 1.5em;}
+}
+
+/* Web面接予約詳細 */
+.videoInterview__checklists {margin: 0px 0px 15px 0px;}
+.videoInterview__checklists label {font-weight: 600;color: #2a2a2a;}
+.videoInterview__checklists input[type='checkbox'] + label {align-items: center;}
+.videoInterview__checklists input[type='checkbox'] + label::after {top: -3px !important; height: 15px;}
+#browser_support {margin-left: 1.5em;margin-bottom: 1.5em;}
+#pc_browser,#mobile_browser {border-left: 3px solid #0081CC;padding-left: 15px;margin-bottom: 15px;}
+#pc_browser ul,#mobile_browser ul {display: inline-grid;min-width: 40%;}
+#pc_browser ul li, #mobile_browser ul li {list-style: disc;margin-left: 30px;}
+#browser_support p {font-weight: 700;color: #2a2a2a;}
+div#linkDiv {min-height: 30px;margin-top: 1.5em;text-align: center;color: #E60113;font-size: 20px;}
+#videoLink {background: #808080;color: #fff;padding: 20px 70px;border-radius: 5px;font-size: 20px;margin-top: 30px;}
+#videoLink:hover {text-decoration: none;}
+/* .main__content__headline:first-of-type {margin-top: 1em !important;} */
+.form__controls input:not(:only-child), .form__controls button:not(:only-child) {width: 35%;}
+.form__controls .cancel {background: #0081CC !important;}
+
+@media  only screen and (max-width: 767px) and (min-width: 320px){
+    #videoLink {padding: 20px 30px;border-radius: 3px;font-size: 16px;}
+    div#linkDiv {font-size: 16px;}
+    .form__controls input:not(:only-child), .form__controls button:not(:only-child) {width: 40%;}
+    .videoInterview__checklists input[type='checkbox'] + label {margin-right: 0em; font-size: 90%}
+}
+@media  only screen and (max-width: 413px) and (min-width: 320px){
+    .videoInterview__checklists input[type='checkbox'] + label::before {width: 24px; height: 18px;}
+    .videoInterview__checklists input[type='checkbox'] + label::after {top: 1px !important; left: 6px;}
+}
+@media  only screen and (max-width: 767px) and (min-width: 414px){
+    .videoInterview__checklists input[type='checkbox'] + label {font-size: 100%;}
+    .videoInterview__checklists input[type='checkbox'] + label::before {width: 30px;}
+    .videoInterview__checklists input[type='checkbox'] + label::after {top: 5px !important;}
+}
+@media  only screen and (max-width: 1023px) and (min-width: 768px){
+    .videoInterview__checklists input[type='checkbox'] + label::before {width: 24px;}
+    .videoInterview__checklists input[type='checkbox'] + label::after {top: 11px !important;}
+}
+@media  screen and (min-width: 768px){
+    .form__controls input, .form__controls button {height: 42px;font-size: 1.6rem;}
+}

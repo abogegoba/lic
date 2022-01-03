@@ -1,0 +1,18 @@
+/* 企業様はこちら
+/* #hdr__anc のwidthを修正
+--------------------------------------------- */
+#hdr__anc {
+    margin: 0 0 0 1em;
+    font-size: 50%;
+    color: #0081cc;
+    width: 22vw;
+    line-height: 1.2;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #hdr__anc {
+        font-size: 85%;
+        margin: 2.5em 0 0 2em;
+        width: auto;
+    }
+}

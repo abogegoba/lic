@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    mypage共通要素用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    .main__content - メインコンテンツ
+
+********************************************************************* */
+.main__content {
+    max-width: 970px;
+    margin: 0 auto;
+    /* VP:375 ~ 1200 : 12px ~ 16px */
+    font-size: calc( 1.2rem + 4 * (100vw - 375px) / 825);
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__content {
+        font-size: 1.2rem;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content {
+        font-size: 1.6rem;
+    }
+}
+
+/* *********************************************************************
+
+    #main__content内共通項目
+
+********************************************************************* */
+.main__content > .main__content__headline {
+    margin: 2em auto 2em;
+}
+.main__content p {
+    line-height: 1.5;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content > .main__content__headline {
+        margin-top: 2em;
+    }
+}

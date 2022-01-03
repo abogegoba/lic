@@ -1,0 +1,299 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    会員登録共通CSS
+        会員登録の共通レイアウトを設定
+
+        Since:
+        Update:
+
+
+/////////////////////////////////////////////////////////////////////////////
+*/
+/* *********************************************************************
+
+    body
+
+********************************************************************* */
+body {
+    background-color: #F1F1F1;
+}
+/* *********************************************************************
+
+    #container - コンテナ
+
+********************************************************************* */
+#container {
+    background-color: #F1F1F1;
+}
+
+/* *********************************************************************
+
+    #main - メイン部分
+
+********************************************************************* */
+#main {
+    padding: 1em 0 3em;
+}
+
+#main > *:not(#app),
+#main > #app > * {
+    padding: 1em;
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgba(29, 13, 13, .35);
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    #main {
+        font-size: 66.66%; /* PC:18px -> SP:12px */
+    }
+}
+/* *********************************************************************
+
+    #main__hdr - メイン部分ヘッダ
+
+********************************************************************* */
+#main__hdr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#main__hdr img {
+    max-width: 50px;
+    margin-right: 2em;
+}
+#main__hdr h1 {
+    color: #151515;
+    font-size: 133.33%; /* PC:24px */
+}
+#main__hdr h1:only-child {
+    margin: 1em 0;
+}
+#main__hdr h1:not(:only-child) {
+    margin-bottom: .5em;
+}
+#main__hdr p {
+    color: #212121;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    #main__hdr {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #main__hdr img {
+        margin-right: 1em;
+    }
+    #main__hdr p {
+        font-size: 90%;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main__hdr img {
+        max-width: 80px;
+    }
+}
+/* *********************************************************************
+
+    #main__content - メインコンテンツ
+
+********************************************************************* */
+#main__content {
+    margin-top: 1em;
+    padding: 5em 0 7em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main__content {
+        text-align: center;
+    }
+}
+
+/* メインコンテンツ内要素
+--------------------------------------------- */
+#main__content > * {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* タイトル */
+#main__content h2 {
+    margin-bottom: 1em;
+    font-size: 133.33%;
+}
+/* 文章 */
+#main__content p {
+    line-height: 1.5;
+}
+#main__content p + p {
+    margin-top: 1em;
+}
+
+/* ページ下部アンカー */
+#main__content nav:last-of-type {
+    display: flex;
+    max-width: 690px;
+}
+#main__content nav:last-of-type a.button {
+    width: 45%;
+    max-width: 310px;
+    display: block;
+    margin: 3em auto 0;
+    padding: .6em;
+}
+#main__content nav:last-of-type a.button:nth-of-type(2) {
+    background: #E60012;
+}
+#main__content nav:last-of-type a.button:hover {
+    text-decoration: none;
+}
+
+/* *********************************************************************
+
+    .form - 送信フォーム
+
+********************************************************************* */
+.form {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .form {
+        width: 85%;
+    }
+}
+
+/* フォーム内table
+--------------------------------------------- */
+
+/* 注意書き
+--------------------------------------------- */
+.form__table td p {
+    margin-top: 1em;
+    text-align: left;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .form__table td p {
+        font-size: 85%;
+    }
+}
+
+/* セレクトボックス
+--------------------------------------------- */
+.selectBox__wrapper {
+    border-bottom: solid 1px #B2B2B2;
+}
+.selectBox__wrapper.width75 {
+    width: 75%;
+}
+.selectBox__wrapper.width45 {
+    width: 45%;
+}
+
+.form__table select {
+    border-color: #B2B2B2;
+    color: #A7A5A5;
+}
+.selectBox__wrapper.width75 .form__table select {
+    width: 75%;
+}
+.selectBox__wrapper.width45 .form__table select {
+    width: 45%;
+}
+
+
+/* ボタン
+--------------------------------------------- */
+.form__button {
+    max-width: 130px;
+    width: auto;
+    padding: .25em 1em;
+    margin: 0 1em;
+    background: #0081CC;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 100%;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .form__button {
+        max-width: 121px;
+        padding: .75em 1.5em;
+        border-radius: 5px;
+    }
+}
+
+/* 送信ボタン共通
+--------------------------------------------- */
+.form__controls {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+
+.form__controls input {
+    width: 47%;
+    height: 40px;
+    margin: 3em .5em 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 1.6rem;
+    -webkit-appearance : none;
+}
+.form__controls input:hover {
+    opacity: .7;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .form__controls {
+        max-width: 700px;
+    }
+    .form__controls input {
+        max-width: 310px;
+        height: 60px;
+        margin-top: 4em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border-radius: 5px;
+        font-size: 133.33%;
+    }
+    .form__controls input:only-child {
+        max-width: 390px;
+    }
+}
+
+
+/* 次に進むボタン
+--------------------------------------------- */
+.form__controls__next {
+    background: #0081CC;
+}
+
+/* 前に戻るボタン
+--------------------------------------------- */
+.form__controls__prev {
+    background: #434343;
+}
+
+/* 登録するボタン
+--------------------------------------------- */
+.form__controls__register {
+    background: #E60012;
+}

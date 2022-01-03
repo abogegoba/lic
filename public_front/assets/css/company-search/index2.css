@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    企業検索詳用CSS
+        /company-search/index2.html
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+
+
+/* *********************************************************************
+
+    .main__form - 企業検索フォーム2
+
+********************************************************************* */
+.main__form > div:nth-of-type(-n+2) {
+    margin-bottom: 1.25em;
+}
+
+.main__form label,
+.main__form__label {
+    display: block;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+.main__form input::placeholder { color: #5e5d5d; }
+.main__form input:focus::placeholder { color: transparent; }
+
+/* 検索窓
+--------------------------------------------- */
+.main__form__search {
+    display: flex;
+    flex-wrap: wrap;
+}
+.main__form__search label {
+    width: 100%;
+}
+.main__form__search input[type='search'] {
+    box-sizing: border-box;
+    width: calc(100% - 3em);
+    padding-left: 1em;
+    border-color: #A0A0A0;
+    border-radius: 4px 0 0 4px;
+    font-size: 1.6rem;
+}
+.main__form__search input[type='submit'] {
+    box-sizing: border-box;
+    width: 3em;
+/*    border: none;*/
+    background: url(/assets/img/common/icon_search.png) no-repeat center center / auto 70%;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    text-indent: -9999px;
+    font-size: 1.6rem;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__form__search input[type='search'] {
+        font-size: initial;
+    }
+    .main__form__search input[type='submit'] {
+        font-size: initial;
+    }
+}
+
+/* セレクトボックス
+--------------------------------------------- */
+.main__form__selects .selectBox__wrapper {
+    margin-bottom: 1em;
+    border: solid 1px #A0A0A0;
+    border-radius: 4px;
+}
+.main__form__selects  .selectBox__wrapper select {
+    width: 100%;
+    padding-left: 1em;
+    font-size: 1.6rem;
+    color: #5e5d5d;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__form > div:nth-of-type(-n+2) {
+        margin-bottom: 2em;
+    }
+    .main__form__selects {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main__form__selects > div {
+        width: 32.5%;
+    }
+    .main__form__checklists {
+        justify-content: flex-start;
+    }
+    .main__form__selects  .selectBox__wrapper select {
+        font-size: initial;
+    }
+}
+
+/* チェックボックス
+--------------------------------------------- */
+.main__form__checklists {
+    display: flex;
+    flex-wrap: wrap;
+}
+.main__form__label {
+    width: 100%;
+}
+.main__form input[type='checkbox'] + label {
+    top: 5px;
+    margin: 0;
+    padding-right: 0;
+    font-weight: normal;
+}
