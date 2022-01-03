@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    ログイン用CSS
+
+        Since:
+        Update:
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+/* *********************************************************************
+
+    タイトル
+
+********************************************************************* */
+#main h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+    padding: 1em 0;
+    background: #0081CC;
+    color: #FFF;
+    text-align: center;
+    font-size: 125%;
+}
+.client #main h2 {
+    background: #313131;
+}
+#main h2::before {
+    content: '';
+    display: inline-block;
+    margin-right: .5em;
+    width: 1.5em;
+    height: 1.5em;
+    background: url(/assets/img/common/icon_header_login-wh.png) no-repeat top left / contain;
+}
+/* ~767 */
+@media screen and (max-width: 767px) {
+    #main h2 {
+        margin-left: -2.67vw;
+        margin-right: -2.67vw;
+    }
+}
+/* *********************************************************************
+
+    .form - 送信フォーム
+
+********************************************************************* */
+.main__form {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.main__form label {
+    margin: .5em;
+}
+.main__form input[type='email'],
+.main__form input[type='password'] {
+    width: 100%;
+    margin-bottom: 1em;
+}
+.main__form .form__controls input:only-child {
+    width: 70%;
+}

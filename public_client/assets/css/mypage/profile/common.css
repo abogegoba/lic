@@ -1,0 +1,581 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /mypage/profile/共通要素用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    #container.profile - プロフィール(/mypage/profile/)にのみ使用
+
+********************************************************************* */
+/* ~1200 */
+@media screen and (max-width: 1200px) {
+    #container.profile {
+        background-color: #FFF;
+    }
+}
+
+/* *********************************************************************
+
+    #main
+
+********************************************************************* */
+#main {
+    padding-bottom: 3em;
+}
+#container.profile #main {
+    padding-bottom: 0;
+    background: #FFF;
+}
+
+/* *********************************************************************
+
+    マイページメニュー
+
+********************************************************************* */
+#mypageMenu {
+    margin-bottom: 1em;
+}
+#container.profile #mypageMenu {
+    margin-bottom: 0;
+}
+
+
+/* *********************************************************************
+
+    .main__content - メインコンテンツ
+
+********************************************************************* */
+.main__content:not(#profile) {
+    padding: 5em 5% 7em !important;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgba(29, 13, 13, .35);
+    max-width: 1200px;
+}
+.main__content#profile {
+    padding: 1px 5% 7em !important;
+}
+
+.main__content#profile .flex > section:not(:first-of-type) {
+    margin-left: 10%;
+}
+.main__content#profile .flex > section > picture {
+    display: block;
+    background-color: #FFF;
+    line-height: 0;
+}
+.main__content#profile .flex > section > picture img {
+    width: 127.5px;
+    height: 173.5px;
+    object-fit: contain;
+}
+.main__content#profile .flex + h2 {
+    margin-top: 8%;
+}
+
+.main__content#profile .video {
+    display: block;
+    background-color: #FFF;
+    line-height: 0;
+}
+.main__content#profile .video video {
+    margin-bottom: 0;
+    max-width: 100%;
+    object-fit: contain;
+    width: 100%;
+    height: calc(100% * 0.562667);
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content:not(#profile) {
+        margin-right: -2rem;
+        margin-left: -2rem;
+    }
+    .main__content#profile .flex > section:not(:first-of-type) {
+        margin-left: 5%;
+    }
+    .main__content#profile .flex > section > picture img {
+        width: 153px;
+        height: 208px;
+    }
+    .main__content#profile .flex + h2 {
+        margin-top: 5%;
+    }
+    .main__content#profile .form__modify dd {
+        width: 649px;
+    }
+    .main__content#profile .video video {
+        width: 970px;
+        height: 365.1px;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content:not(#profile) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+#breadcrumbs ~ #main #mypageMenu + .main__content:not(#profile) {
+    margin-top: calc(30px + 131px + 1em);
+}
+
+/* 414~ */
+@media screen and (min-width: 414px) {
+    #breadcrumbs ~ #main #mypageMenu + .main__content:not(#profile) {
+        margin-top: calc(30px + 131px + 3vw + .5em);
+    }
+}
+/* 600~ */
+@media screen and (min-width: 600px) {
+    #breadcrumbs ~ #main #mypageMenu + .main__content:not(#profile) {
+        margin-top: calc(30px + 144px + 2vw);
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #breadcrumbs ~ #main #mypageMenu + .main__content:not(#profile) {
+        margin-top: calc(30px + 101px + 3em);
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    #breadcrumbs ~ #main #mypageMenu + .main__content:not(#profile) {
+        margin-top: calc(35px + 101px + 3em);
+    }
+}
+
+/* *********************************************************************
+
+    メインコンテンツ内共通要素
+
+********************************************************************* */
+/* ラジオボタン共通要素
+--------------------------------------------- */
+table.form__table input[type='radio'] + label {
+    margin-bottom: .5em;
+}
+table.form__table input[type='radio'] + label + input + label {
+    margin-left:  1em;
+}
+
+/* 写真
+--------------------------------------------- */
+table.form__table .photo {
+    align-items: center;
+}
+table.form__table .photo picture {
+    width: 45%;
+}
+table.form__table .photo picture img {
+    max-width: 150px;
+}
+
+/* ハッシュタグカラー
+--------------------------------------------- */
+.color {
+    flex-wrap: wrap;
+}
+table.form__table .color span {
+    width: 32px;
+    padding: 2px 0;
+    border-radius: 3px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+table.form__table .radio__color + .radio__color label {
+    margin-left: .5em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    table.form__table .color span {
+        width: 50px;
+    }
+}
+@media all and (-ms-high-contrast:none){
+    .color input[type='radio']:checked + label::after {
+        top: .35em;
+        left: .22em;
+    }
+}
+
+/* PR動画
+--------------------------------------------- */
+.video + .video {
+    margin-top: 2em;
+}
+.video {
+    display: block;
+    margin: 0;
+    line-height: 0;
+}
+.video video {
+    object-fit: contain;
+    width: calc(100vw - 2.67vw - 2.67vw - 10%);
+    height: calc((100vw - 2.67vw - 2.67vw - 10%) * 0.562667);
+    background-color: #FFF;
+    margin-bottom: 0.5em;
+}
+.video button.remove {
+    line-height: 1.2;
+    padding: .5em 1em;
+}
+.video input[type="file"] + label {
+    margin-right: .5em;
+}
+.video .video-remove {
+    width: 25%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+}
+.video .video__form__headline {
+    line-height: 1;
+    margin: 1em 0;
+}
+.video .video__form input,
+.video .video__form textarea {
+    width: 100%;
+}
+
+table.form__table th {
+    padding-top: 0;
+    padding-bottom: 1em;
+}
+table.form__table tr:not(:first-of-type) th {
+    padding-top: 3em;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .video-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .video video {
+        width: 362.65px;
+        height: 204.01px;
+        margin: 0 calc(100% - 362.65px) 1em 0;
+    }
+    .video img {
+        width: 220px;
+        height: auto;
+        margin: 0 calc(100% - 362.65px) 1em 0;
+    }
+    .video button.remove {
+        line-height: 1.4;
+        padding: .6em 1em;
+    }
+    .video input[type="file"] + label {
+        margin-right: 1em;
+    }
+    .video .video__form__headline {
+        margin-bottom: .5em;
+    }
+    table.form__table td {
+        padding-top: 0;
+        padding-bottom: 1em;
+    }
+    table.form__table tr:not(:first-of-type) td {
+        padding-top: 3em;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .video video {
+        order: 1;
+        margin: 0 30% 1em 0;
+    }
+    .video input[type="file"] + label {
+        order: 3;
+        min-width: 6em;
+    }
+    .video button.remove {
+        order: 2;
+        min-width: 6em;
+        margin: 0 4em 0 -15%;
+    }
+}
+
+/* インスタグラム
+--------------------------------------------- */
+.instagram {
+    flex-wrap: wrap;
+}
+.instagram input + label {
+    width: 50%;
+    margin-left: 0 !important;
+    margin-bottom: 1em !important;
+}
+.instagram input:last-of-type + label {
+    width: 100%;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .instagram input + label {
+        width: 32%;
+    }
+    .instagram input:last-of-type + label {
+        width: 40%;
+    }
+}
+
+/* 経歴
+--------------------------------------------- */
+.career {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.career + .career {
+    margin-top: 1.5em;
+}
+.career input[type='text'] {
+    width: 100%;
+    margin: 1em 0 .5em;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .career input[type='text'] {
+        width: 80%;
+    }
+    .career button.add {
+        order: 1;
+        display: block;
+    }
+}
+
+/* 資格
+--------------------------------------------- */
+.licences {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.licences + .licences {
+    margin-top: 1.5em;
+}
+.licences input[type='text'] {
+    width: 100%;
+    margin-bottom: .5em;
+}
+.licences button.add {
+    margin-left: auto;
+}
+.licences p {
+    width: 100%;
+    margin-top: .5em;
+    color: #C00;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .licences:only-of-type {
+        display: block;
+    }
+    .licences input[type='text'] {
+        width: 75%;
+        margin-bottom: 0;
+    }
+    .licences button.add {
+        order: 1;
+        display: block;
+        margin: 1em 0 0;
+    }
+}
+
+/* ヘッダ入力部：自己紹介のみ使用
+--------------------------------------------- */
+table.form__table th label.pc {
+    line-height: 1.5;
+}
+table.form__table th label + input {
+    margin-top: .5em;
+}
+
+
+
+/* *********************************************************************
+
+    #photo - 写真・ハッシュタグ入力画面
+
+********************************************************************* */
+#photo table.form__table th {
+    position: relative;
+}
+#photo .photo-sample__input {
+    display: none;
+}
+#photo .photo-sample__open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0081CC;
+    color: #FFF;
+    border-radius: 100%;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 100%;
+}
+#photo .photo-sample__open::before,
+#photo .photo-sample__open::after {
+    content: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+#photo .photo-sample__input:checked + .photo-sample__open::before,
+#photo .photo-sample__input:checked + .photo-sample__open::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-color: transparent;
+    margin: 12px 0 0;
+    width: 0;
+    height: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+#photo .photo-sample__input:checked + .photo-sample__open::before {
+    border-width: 8px;
+    border-bottom-color: #FFF;
+    z-index: 2;
+}
+#photo .photo-sample__input:checked + .photo-sample__open::after {
+    border-width: 10px;
+    border-bottom-color: #DCDCDC;
+    z-index: 1;
+    top: -1px;
+}
+#photo .photo-sample {
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    padding: 10px;
+    width: 200px;
+    margin-top: 9px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+#photo .photo-sample__input:checked ~ .photo-sample {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+#photo .photo-sample__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#photo .photo-sample__close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 180%;
+    color: #0081CC;
+}
+#photo .photo-sample__inner > img {
+    width: 90px;
+    height: auto;
+}
+#photo .photo-sample__text {
+    width: calc(100% - 100px);
+    font-weight: normal;
+    font-size: 90%;
+    margin-left: 10px;
+    line-height: 1.4;
+}
+#photo .photo-sample__text-sub {
+    font-size: 90%;
+    display: block;
+    margin-top: .5em;
+}
+
+#photo .flex picture {
+    background-color: #FFF;
+    line-height: 0;
+    width: auto;
+}
+#photo .flex picture img {
+    max-width: 127.5px;
+    object-fit: contain;
+    width: 127.5px;
+    height: 173.5px;
+    line-height: 0;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    #photo .photo-sample {
+        right: -10px;
+    }
+}
+/* 375~767 */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    #photo .form__table {
+        position: relative;
+        max-width: 400px;
+        margin: auto;
+    }
+    #photo .form__table tr:nth-of-type(1) {
+        width: 150px;
+    }
+    #photo .form__table tr:nth-of-type(1) td {
+        display: table-cell;
+    }
+    #photo .form__table tr:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+    }
+    #photo .form__table tr:nth-of-type(2) th {
+        padding-top: 0;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #photo .photo-sample__open,
+    #photo .photo-sample__close {
+        display: none;
+    }
+    #photo .photo-sample {
+        top: 60px;
+        left: 4%;
+        border-radius: 0;
+        border: 0;
+        padding: 0;
+        margin-top: 0;
+        width: 92%;
+        opacity: 1;
+        visibility: visible;
+    }
+    #photo .flex picture {
+        margin-right: 12%;
+    }
+    #photo .flex picture img {
+        width: 122px;
+        height: 166px;
+    }
+}

@@ -1,0 +1,355 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /mypage/message/共通要素用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    共通項目
+
+********************************************************************* */
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .main__content {
+        margin-bottom: 3em;
+    }
+}
+
+/* *********************************************************************
+
+    メッセージ一覧
+
+********************************************************************* */
+.message {
+    display: flex;
+    align-items: center;
+}
+.message + .message {
+    margin-top: 3em;
+}
+
+/* メッセージ - 画像
+--------------------------------------------- */
+.message__img,
+.round-img {
+    margin-right: 1em;
+}
+.message__img {
+    overflow: hidden;
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+.message__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .message__img {
+        width: 112px;
+        height: 112px;
+    }
+}
+
+/* メッセージ - 本文
+--------------------------------------------- */
+.message__body {
+    width: calc(100% - 64px - 30% - 2em);
+    max-width: 450px;
+}
+
+.message__body h3 {
+    margin: 0 0 .5em 0;
+    font-size: 125%;
+}
+
+.message__body p {
+    position: relative;
+    max-height: calc(2em * 1.5);
+    overflow: hidden;
+}
+.message__body p::before {
+    content: '';
+    position: absolute;
+    bottom: .25em;
+    right: 1px;
+    width: 1em;
+    height: 1.25em;
+    background: #FFF;
+}
+.message__body p::after {
+    content: '...';
+    position: absolute;
+    bottom: .5em;
+    right: 0;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+.message__body a {
+    color: #000;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .message__body {
+        margin-left: 1em;
+    }
+}
+
+/* メッセージ - フッタ：日付＆未読
+--------------------------------------------- */
+.message footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+    max-width: 130px;
+    margin-left: auto;
+}
+
+/* メッセージ - 日付
+--------------------------------------------- */
+.message__date {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+/* メッセージ - 未読
+--------------------------------------------- */
+.message__isRead {
+    white-space: nowrap;
+    color: #3897F0;
+    font-weight: bold;
+    font-size: 83.33%;
+}
+.message__isRead::before {
+    content: '';
+    display: inline-block;
+    width: .75em;
+    height: .75em;
+    margin-right: .25em;
+    background: #3897F0;
+    border-radius: 50%;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .message__body {
+        width: calc(100% - 64px - 20% - 2em);
+    }
+    .message footer {
+        position: relative;
+        display: block;
+        width: 20%;
+    }
+    .message__date {
+        margin-right: 0;
+    }
+    .message__isRead {
+        position: absolute;
+        right: 0;
+        top: -1.5em;
+        font-size: 100%;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .message__body h3 {
+        font-size: 145%;
+    }
+    .message footer {
+        justify-content: space-between;
+        max-width: 250px;
+    }
+    .message__isRead {
+        font-size: 111%;
+    }
+}
+
+/* *********************************************************************
+
+    メッセージ詳細
+
+********************************************************************* */
+/* ヘッダ
+--------------------------------------------- */
+#message__hdr {
+    margin-bottom: 2em;
+    padding-top: calc(30px + 132px);
+    background: #0068B7;
+}
+.client #message__hdr {
+    background: #444;
+}
+#message__hdr > div {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    max-width: 970px;
+    margin: auto;
+    color: #FFF;
+}
+#message__hdr picture {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: -2.67vw;
+    position: relative;
+    width: 120px;
+    height: 82.5px;
+}
+#message__hdr img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+#message__hdr h2 {
+    width: 70%;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #message__hdr {
+        padding-top: calc(35px + 101px);
+    }
+    #message__hdr > div {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    #message__hdr picture {
+        margin-left: -2rem;
+        width: 240px;
+        height: 175px;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    #message__hdr > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #message__hdr picture {
+        margin-left: 0;
+    }
+}
+
+/* コンテンツ
+--------------------------------------------- */
+.chats {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3em;
+}
+.chats--student {
+    justify-content: flex-end;
+}
+.chats > div {
+    max-width: calc(70% - 16%);
+}
+
+.chats p {
+    box-sizing: border-box;
+    display: table;
+    padding: .75em;
+    border: solid 1px #DBDBDB;
+    border-radius: 10px;
+}
+.chats--student p {
+    background: #E5E5E5;
+}
+.chats p + p {
+    margin-top: 1em;
+}
+
+.chats__date {
+    margin-top: 1em;
+    color: #363636;
+}
+
+/* メッセージ送信フォーム
+--------------------------------------------- */
+.chats__form {
+    position: relative;
+    max-width: 700px;
+    margin: 1em auto 0;
+}
+
+.chats__form input {
+    box-sizing: border-box;
+    font-size: 1.6rem;
+}
+.chats__form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 5em;
+    padding: .5em;
+    border: solid 1px #DBDBDB;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    -webkit-appearance : none;
+    appearance: none;
+
+
+}
+.chats__form .form__controls input[type='submit'] {
+    max-width: 250px;
+    margin-top: 1em;
+}
+.client .chats__form .form__controls input[type='submit'] {
+/*    background-color: #0081CC;*/
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .chats__form input {
+        font-size: 130%;
+    }
+    .chats__form textarea {
+        height: 7em;
+        font-size: 100%;
+    }
+    .chats__form .form__controls input[type='submit'] {
+        height: auto;
+        font-size: 110%;
+    }
+}
+
+@media all and (-ms-high-contrast:none){
+    .chats__form textarea {
+        padding: 1em .5em;
+    }
+}
+
+
+/* 面接予約フォーム
+--------------------------------------------- */
+.interview__form {
+    margin-top: 5em;
+    font-size: 110%;
+    text-align: center;
+}
+.interview__form button.interview {
+    width: 80%;
+    max-width: 450px;
+}

@@ -1,0 +1,524 @@
+/* *********************************************************************
+
+    学生選択
+
+********************************************************************* */
+.button.message {
+    display: block;
+    font-size: 1.3rem;
+    background: #B9010F;
+    width: 200px;
+    margin: 0 auto 2em;
+    padding: 0.9rem 0;
+    border-radius: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .button.message {
+        display: block;
+        font-size: 2rem;
+        width: 300px;
+        margin: 0 auto 2em;
+        padding: 0.9rem 3.6rem;
+    }
+}
+
+/* コントロールボックス内の送信ボタン
+/* padding-right,padding-left custom
+--------------------------------------------- */
+.form__controls input,
+.form__controls button {
+    padding: .5em .5em;
+}
+
+/* カレンダーUI
+--------------------------------------------- */
+.calendar-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calendar-title__year-list {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Hiragino Kaku Gothic ProN;
+    margin-bottom: 1rem;
+}
+
+.btn-monthMove {
+    vertical-align: sub;
+}
+.btn-monthMove.prev {
+    margin-right: 2rem;
+}
+.btn-monthMove.next {
+    margin-left: 2rem;
+}
+
+.calendar-title__month-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-title__month-list {
+        grid-template-columns: repeat(6, 100px);
+    }
+}
+
+.calendar-title__month-list div {
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #818181;
+    padding: 1.3rem 0;
+}
+
+.calendar-title__month-list div {
+    border: 1px solid #e2e2e2;
+}
+.calendar-title__month-list div:not(:nth-of-type(6n)) {
+    border-right: none;
+}
+.calendar-title__month-list div:nth-last-of-type(-n+6) {
+    border-top: none;
+}
+.calendar-title__month-list div.selectedMonth {
+    background-color: #313131;
+    color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-title__month-list div {
+        max-width: 100px;
+    }
+}
+
+.calendar-body {
+    width: 100%;
+    max-width: 1100px;
+    table-layout: fixed;
+    margin-bottom: 20px;
+    color: #565656;
+    font-size: 1.1rem;
+    text-align: center;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-body {
+        border: 1px solid #e2e2e2;
+    }
+}
+
+.calendar-body__item {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-body__item > div {
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #818181;
+}
+
+span.sun,
+.calendar-body__item > div:nth-of-type(7n-6) {
+    color: #e29a9b;
+}
+span.sat,
+.calendar-body__item > div:nth-of-type(7n) {
+    color: #5a66a8;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-body__item > div {
+        border-right: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+    }
+    .calendar-body__item > div:nth-of-type(7n) {
+        border-right: none;
+    }
+}
+
+.calendar-body__item > div span.selectedDay {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f00;
+    color: #fff;
+}
+
+.calendar-body__item div.weeks {
+    text-align: center;
+    min-height: 25px;
+    padding: 0.6rem 0;
+    font-size: 1.3rem;
+    font-family: Hiragino Kaku Gothic ProN;
+}
+
+.calendar-body__item > div.item__day{
+    width: 100%;
+    min-height: 40px;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-family: Hiragino Kaku Gothic ProN;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-body__item > div.weeks {
+        padding: 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .calendar-body__item > div.item__day{
+        text-align: left;
+        padding: 0.5rem;
+        height: 10rem;
+        position: relative;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: Hiragino Kaku Gothic ProN;
+    }
+
+    .calendar-body__item > div span.day {
+        display: inline-block;
+        height: 23px;
+        margin-bottom: .5rem;
+    }
+    .calendar-body__item > div span.selectedDay {
+        text-align: center;
+        width: 25px;
+        height: 23px;
+        padding: .2rem;
+        box-sizing: border-box;
+    }
+}
+
+/* スケジュールバー */
+
+.plan-grp {
+    display: inline-block;
+    margin-right: .3rem;
+}
+
+.plan {
+    display: inline-block;
+    color: #fff;
+    background: #0081CC 0% 0% no-repeat padding-box;
+    font-weight: normal;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+}
+.plan--done {
+    background-color: #BEBEBE;
+}
+.plan--cancel {
+    background-color: #000;
+}
+
+@media screen and (min-width: 768px) {
+    .plan-grp {
+        display: block;
+        margin:0 0 .3rem 0;
+    }
+    .plan {
+        width: 95%;
+        max-width: 9rem;
+        height: auto;
+        padding: 3px;
+        margin: auto;
+        border-radius: 5px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: 970px) {
+    .plan {
+        max-width: 14rem;
+    }
+}
+
+/* 詳細モーダル */
+.plan-modal {
+    display: none;
+    max-width: 320px;
+    height: auto;
+    padding: 1.2rem 2rem;
+    margin: 0 auto 3rem;
+    box-sizing: border-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0 5px 20px #00000029;
+    font-weight: normal;
+    color: #818181;
+}
+.plan-modal.active {
+    display: block;
+    opacity: 1;
+    animation: fade-in 0.3s ease-in;
+    -moz-animation: fade-in 0.3s ease-in;
+    -webkit-animation: fade-in 0.3s ease-in;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+button.plan-modal__close {
+    display: none;
+}
+.plan-modal__contents {
+    font-family: Hiragino Kaku Gothic ProN;
+}
+
+.plan-modal__name {
+    color: #1865F7;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.plan-modal__more-grp {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.plan-modal__more-grp .button {
+    background-color: #0081CC;
+    display: block;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 130px;
+    padding: 0.9rem 0;
+    margin: 1rem auto;
+    border-radius: 24px;
+}
+
+.plan-modal__name,
+.plan-modal__list > li {
+    line-height: 2.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.plan-modal__list > li {
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.plan-modal__more-grp .button.button--cancel {
+    background-color: #B9010F;
+}
+.plan-modal__more-grp .button.button--done {
+    background-color: #BEBEBE;
+    max-width: 150px;
+}
+
+.ico {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 1.5rem .5rem 0;
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 768px) {
+    .plan-modal {
+        width: 320px;
+        max-height: 275px;
+        padding: 2rem;
+        margin: 0;
+        opacity: 0;
+    }
+    .plan-modal.active {
+        display: block;
+        position: absolute;
+        right: 100%;
+        transform: translate(0%, -50%);
+        z-index: 2;
+        opacity: 1;
+        animation: fade-in 0.3s ease-in;
+        -moz-animation: fade-in 0.3s ease-in;
+        -webkit-animation: fade-in 0.3s ease-in;
+    }
+    .calendar-body__item > div:nth-of-type(7n-6) .plan-modal.active,
+    .calendar-body__item > div:nth-of-type(7n-5) .plan-modal.active {
+        left: 100%;
+    }
+    .calendar-body__item > div:nth-of-type(-n+7) .plan-modal.active {
+        transform: translate(0%, -30%);
+    }
+    .calendar-body__item > div:nth-last-of-type(-n+7) .plan-modal.active {
+        transform: translate(0%, -100%);
+    }
+    .plan-modal__name {
+        font-size: 2rem;
+    }
+    .plan-modal__more-grp {
+        display: block;
+        padding: 3rem 2rem 0;
+        text-align: center;
+    }
+    .plan-modal__more-grp .button {
+        display: block;
+        font-size: 1.5rem;
+        width: 200px;
+        max-width: 200px;
+        padding: 0.9rem 0;
+        margin: 0 auto 1rem;
+    }
+    .plan-modal__more-grp .button.button--done {
+        background-color: #BEBEBE;
+        max-width: 200px;
+    }
+    .plan-modal__contents {
+        padding: 1.5rem 0 1rem;
+    }
+    button.plan-modal__close {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: transparent;
+        padding: 0;
+    }
+    .plan-modal__close img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .plan-modal__list > li {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+    .ico {
+        width: 20px;
+        height: 20px;
+        margin: 0 1.5rem .5rem 0;
+        font-size: 1.5rem;
+    }
+}
+
+
+/* 全表示モーダル */
+
+.more-links {
+    display: inline-block;
+    margin-left: -.3rem;
+    font-size: .5rem;
+    color: #000;
+}
+
+@media screen and (min-width: 768px) {
+    .more-links {
+        display: block;
+        font-size: 1.3rem;
+        position: absolute;
+        left: 1rem;
+        bottom: .5rem;
+    }
+    .plan-modal.plan-modal--more {
+        display: none;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem;
+        height: auto;
+        min-height: 40px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: Hiragino Kaku Gothic ProN;
+    }
+    .plan-modal.plan-modal--more.active {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(1%, -120%);
+        z-index: 1;
+        opacity: 1;
+        animation: fade-in 0.3s ease-in;
+        -moz-animation: fade-in 0.3s ease-in;
+        -webkit-animation: fade-in 0.3s ease-in;
+    }
+    .calendar-body__item > div:nth-of-type(7n-6) .plan-modal.plan-modal--more.active,
+    .calendar-body__item > div:nth-of-type(7n-5) .plan-modal.plan-modal--more.active {
+        left: auto;
+    }
+    .calendar-body__item > div:nth-of-type(-n+7) .plan-modal.plan-modal--more.active,
+    .calendar-body__item > div:nth-last-of-type(-n+7) .plan-modal.plan-modal--more.active {
+        transform: translate(1%, -120%);
+    }
+    .plan-modal--more__days {
+        display: inline-block;
+        text-align: center;
+        vertical-align: -4px;
+        line-height: 25px;
+        margin-bottom: 1px;
+    }
+}
+
+/* スマホ用スケジュールリスト */
+
+.calendar-sp-plans__day {
+    text-align: center;
+    font-family: Hiragino Kaku Gothic ProN;
+    margin-bottom: 2rem;
+}
+
+.calendar-sp-plans__day p {
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .calendar-sp-plans {
+        display: none;
+    }
+}
+
+/* 共通系 */
+.pc-show {
+    display: none !important;
+}
+
+.main__content.video-container {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .sp-show {
+        display: none !important;
+    }
+    .pc-show {
+        display: block !important;
+    }
+    .main__content.video-container {
+        max-width: 1100px;
+    }
+}

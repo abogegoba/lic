@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    企業検索詳細通要素用CSS
+        /company-search/detail/
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    .main__img - メイン画像
+
+********************************************************************* */
+.main__img {
+    text-align: center;
+}
+.main__img picture {
+    display: block;
+}
+.main__img picture img {
+    display: block;
+    margin: auto;
+}
+.main__img video {
+    display: block;
+    margin: 1em auto;
+    width: 100%;
+}
+
+.main__img__thumbs{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.main__img__thumbs picture img {
+    max-width: 100%;
+    max-height: none;
+}
+
+/* 375~767 */
+@media screen and (min-width: 376px) and (max-width: 767px) {
+    .main__img__thumbs picture img {
+        max-width: 100%;
+        max-height: none;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__img__thumbs picture img {
+        max-width: 100%;
+        max-height: none;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content__apply - 応募フォーム
+
+********************************************************************* */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+    .main__content__apply > form {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+}
+
+/* ボタン
+--------------------------------------------- */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply button {
+        width: 100%;
+        margin: .5em 0 0 0;
+        padding:.75em 1em;
+    }
+
+    .main__content__apply button br {
+        display: none;
+    }
+}
+
+.client button {
+    background: #0081CC;
+}
+
+/* クエスチョン
+--------------------------------------------- */
+.main__content__apply .tooltip {
+    position: relative;
+    z-index: 0;
+}
+
+.main__content__apply .tooltip__open {
+    display: block;
+    cursor: pointer;
+    padding: .5em;
+    background-color: #8FC31F;
+    color: #FFF;
+}
+
+.main__content__apply .tooltip__inner {
+    position: absolute;
+    right: 0;
+    bottom: 34px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    padding: 6px 24px 6px 6px;
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__inner {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__content__apply .tooltip__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    color: #0081CC;
+    font-size: 180%;
+    text-align: center;
+}
+
+.main__content__apply .tooltip__text {
+    line-height: 1.4;
+}
+
+.main__content__apply .tooltip__inner::before,
+.main__content__apply .tooltip__inner::after {
+    content: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.main__content__apply .tooltip__inner::before,
+.main__content__apply .tooltip__inner::after {
+    content: "";
+    position: absolute;
+    left: auto;
+    transform: none;
+    border-style: solid;
+    border-color: transparent;
+    margin: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.main__content__apply .tooltip__inner::before {
+    right: 16px;
+    bottom: -16px;
+    border-width: 8px;
+    border-top-color: #FFF;
+    z-index: 2;
+}
+
+.main__content__apply .tooltip__inner::after {
+    right: 14px;
+    bottom: -20px;
+    border-width: 10px;
+    border-top-color: #DCDCDC;
+    z-index: 1;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__inner::before,
+.main__content__apply .tooltip.is-active .tooltip__inner::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__open:hover {
+    opacity: 1;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply .tooltip__inner {
+        bottom: 40px;
+        padding: 10px 32px 10px 10px;
+        width: 292px;
+    }
+
+    .main__content__apply .tooltip__close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .main__content__apply .tooltip__text {
+        font-size: 87.5%;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content__feature - 当社の特徴
+
+********************************************************************* */
+.main__content__feature picture img {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.main__content__feature video {
+    display: block;
+    text-align: center;
+    margin: auto;
+}

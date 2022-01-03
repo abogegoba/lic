@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /news/ - ニュース詳細用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    .content__news__detail
+
+********************************************************************* */
+#main {
+    margin-right: -2.67vw;
+    margin-left: -2.67vw;
+    padding-right: 2.67vw;
+    padding-left: 2.67vw;
+}
+.content__news__detail {
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main {
+        margin-right: -2rem;
+        margin-left: -2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .content__news__detail {
+        max-width: 980px;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    #main {
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/* ニュース詳細
+--------------------------------------------- */
+.main__content__headline {
+    font-size: 100%;
+    line-height: 1.4;
+    margin-top: 1.6em;
+}
+.news__detail__header {
+    display: flex;
+    align-items: center;
+}
+.news__label {
+    background-color: #0081CC;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 70%;
+    padding: 6px;
+}
+.news__date {
+    font-size: 73%;
+    margin-left: auto;
+}
+.news__detail__content {
+    line-height: 1.4;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+    margin: 20px 0 40px;
+    padding: 20px 0 60px;
+    font-size: 73%;
+}
+.news__detail__content p + p {
+    margin-top: 1.5em;
+}
+.news__logo {
+    display: block;
+    max-width: 100px;
+    margin: .5em 0;
+}
+.news__logo__inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1.5em;
+    text-align: center;
+}
+.news__logo__inline .news__logo {
+    margin: .5em 1.5em;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__headline {
+        font-size: calc( 1.5rem + 12 * (100vw - 375px) / 825);
+        margin-top: 2.4em;
+    }
+    .news__label {
+        font-size: 90%;
+        padding: 7px 10px;
+    }
+    .news__date {
+        font-size: 90%;
+        margin-left: 20px;
+    }
+    .news__detail__content {
+        margin: 40px 0 60px;
+        padding: 40px 0 100px;
+        font-size: 90%;
+    }
+    .news__logo {
+        max-width: 200px;
+    }
+    .news__logo__inline .news__logo {
+        margin: .5em 3em;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content__headline {
+        font-size: 3.2rem;
+        margin-top: 3.2em;
+    }
+}

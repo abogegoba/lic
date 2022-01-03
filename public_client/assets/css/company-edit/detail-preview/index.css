@@ -1,0 +1,867 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    企業検索詳細通要素用CSS
+        /company-search/detail/
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    #main__content内共通項目
+
+********************************************************************* */
+.main__content p {
+    line-height: 1.75;
+}
+
+.main__content dl.basic {
+    margin: 2.5em 0;
+}
+
+/* *********************************************************************
+
+    タイトル共通
+
+********************************************************************* */
+.main__content__headline {
+    margin: 2.5em 0 1.5em;
+}
+
+/* *********************************************************************
+
+    .main__content - 企業検索詳細
+
+********************************************************************* */
+.main__content{
+    /* VP:375 ~ 1200 : 12px ~ 16px */
+    font-size: calc( 1.2rem + 4 * (100vw - 375px) / 825);
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__content {
+        font-size: 1.2rem;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content {
+        font-size: 1.6rem;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content > header - ヘッダ
+
+********************************************************************* */
+.main__content header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 2em auto;
+}
+
+/* 企業情報
+--------------------------------------------- */
+.main__content .company__info {
+    width: auto;
+}
+
+/* .company__logo - 企業ロゴ
+--------------------------------------------- */
+.company__logo {
+    width: 74px;
+    height: 74px;
+    margin-right: 2em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .company__logo {
+        width: 124px;
+        height: 124px;
+    }
+}
+
+/* 企業名
+--------------------------------------------- */
+.main__content header .main__content__headline {
+    margin: 0 0 .25em;
+    /* VP:375 ~ 1200 : 18px ~ 36px */
+    font-size: calc( 1.8rem + 18 * (100vw - 375px) / 825);
+}
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__content header .main__content__headline {
+        font-size: 1.8rem;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content header .main__content__headline {
+        font-size: 3.6rem;
+    }
+}
+
+/* 特徴＆タグのWrapper
+--------------------------------------------- */
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .main__content .company__info > div {
+        display: block;
+    }
+}
+
+
+/* *********************************************************************
+
+    .main__img - メイン画像
+
+********************************************************************* */
+.main__img {
+    margin: 0 -2.67vw;
+}
+.main__img picture,
+.main__img .video,
+.main__img .thumb__noimg {
+    display: block;
+    line-height: 0;
+}
+.main__img picture img,
+.main__img .video video {
+    display: block;
+    object-fit: contain;
+}
+.main__img > picture,
+.main__img > .video {
+    background-color: #FFF;
+    width: 100vw;
+    margin: 0 auto;
+}
+.main__img > picture img,
+.main__img > .video video {
+    width: 100vw;
+}
+.main__img > picture img {
+    height: calc(100vw * 0.558667);
+}
+.main__img > .video video {
+    height: calc(100vw * 0.562667);
+}
+.main__img__thumbs {
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1.5em auto;
+    padding-left: calc(2em + 2vw);
+}
+.main__img__thumbs > div:not(.tooltip) {
+    width: 9em;
+    box-sizing: border-box;
+    max-width: 144px;
+    font-size: 1rem;
+}
+.main__img__thumbs > div:not(:first-of-type):not(.tooltip) {
+    margin-left: 4.2667vw;
+}
+.main__img__thumbs picture,
+.main__img__thumbs .thumb__noimg {
+    border-radius: 2px;
+    background-color: #FFF;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    position: relative;
+}
+.main__img__thumbs .thumb__noimg {
+    width: 9em;
+    height: 9em;
+    max-width: 144px;
+    max-height: 144px;
+    background-color: #FFF;
+}
+.main__img__thumbs picture::before,
+.main__img__thumbs .thumb__noimg::before {
+    content: "";
+    width: 5.5em;
+    height: calc(5.5em * 1.18675);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -1%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.main__img__thumbs .thumb__5sec picture::before,
+.main__img__thumbs .thumb__5sec .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_5sec.png);
+}
+.main__img__thumbs .thumb__10sec picture::before,
+.main__img__thumbs .thumb__10sec .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_10sec.png);
+}
+.main__img__thumbs .thumb__15sec picture::before,
+.main__img__thumbs .thumb__15sec .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_15sec.png);
+}
+.main__img__thumbs .thumb__5sec.is-active picture::before,
+.main__img__thumbs .thumb__5sec.is-active .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_5sec_active.png);
+}
+.main__img__thumbs .thumb__10sec.is-active picture::before,
+.main__img__thumbs .thumb__10sec.is-active .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_10sec_active.png);
+}
+.main__img__thumbs .thumb__15sec.is-active picture::before,
+.main__img__thumbs .thumb__15sec.is-active .thumb__noimg::before {
+    background-image: url(/business/assets/img/client/company-preview/icon_15sec_active.png);
+}
+.main__img__thumbs picture img {
+    width: calc(9em - 2px);
+    height: calc(9em - 2px);
+    max-width: calc(144px - 2px);
+    max-height: calc(144px - 2px);
+    border-radius: 2px;
+}
+.main__img__thumbs .thumb__title {
+    text-align: left;
+    margin-top: .8em;
+    padding: 0;
+    font-weight: bold;
+    line-height: 1.4;
+    width: 9em;
+    height: 1.4em;
+    overflow: hidden;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__img__thumbs {
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-top: .8em;
+    }
+    .main__img__thumbs > div:first-of-type {
+        order: 2;
+    }
+    .main__img__thumbs > div:nth-of-type(2) {
+        order: 3;
+    }
+    .main__img__thumbs > div:nth-of-type(3) {
+        order: 4;
+    }
+}
+
+/* 415~ */
+@media screen and (min-width: 415px) {
+    .main__img__thumbs > div:not(.tooltip) {
+        font-size: 1.2rem;
+    }
+}
+
+/* 600~ */
+@media screen and (min-width: 600px) {
+    .main__img__thumbs > div:not(.tooltip) {
+        font-size: 1.45rem;
+    }
+    .main__img__thumbs picture::before,
+    .main__img__thumbs .thumb__noimg::before {
+        width: 80px;
+        height: calc(80px * 1.18675);
+    }
+    .main__img__thumbs .thumb__title {
+        padding: 0 .4em;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__img__thumbs {
+        padding-left: calc(2em + 25px);
+    }
+    .main__img__thumbs > div:not(.tooltip) {
+        width: 144px;
+    }
+    .main__img__thumbs > div:not(:first-of-type):not(.tooltip) {
+        margin-left: 25px;
+    }
+    .main__img__thumbs picture,
+    .main__img__thumbs .thumb__noimg {
+        border-radius: 4px;
+    }
+    .main__img__thumbs picture img,
+    .main__img__thumbs .thumb__noimg {
+        width: calc(144px - 2px);
+        height: calc(144px - 2px);
+        border-radius: 4px;
+    }
+}
+
+/* 1027 */
+@media screen and (min-width: 1027px) {
+    .main__img > picture,
+    .main__img > .video {
+        width: 970px;
+    }
+    .main__img > picture img {
+        width: 970px;
+        height: 542px;
+    }
+    .main__img > .video video {
+        width: 970px;
+        height: 545.625px;
+    }
+}
+
+/* クエスチョン
+--------------------------------------------- */
+.main__img__thumbs .tooltip {
+    position: relative;
+    z-index: 0;
+    margin-left: 2vw;
+}
+
+.main__img__thumbs .tooltip__open {
+    display: block;
+    cursor: pointer;
+    padding: .5em;
+    background-color: #8FC31F;
+    color: #FFF;
+}
+
+.main__img__thumbs .tooltip__inner {
+    position: absolute;
+    right: -4px;
+    bottom: 34px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    padding: 6px 24px 6px 6px;
+    width: 210px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    text-align: center;
+}
+
+.main__img__thumbs .tooltip.is-active .tooltip__inner {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__img__thumbs .tooltip__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    color: #0081CC;
+    font-size: 180%;
+    text-align: center;
+}
+
+.main__img__thumbs .tooltip__text {
+    line-height: 1.4;
+}
+
+.main__img__thumbs .tooltip__inner::before,
+.main__img__thumbs .tooltip__inner::after {
+    content: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.main__img__thumbs .tooltip__inner::before,
+.main__img__thumbs .tooltip__inner::after {
+    content: "";
+    position: absolute;
+    left: auto;
+    transform: none;
+    border-style: solid;
+    border-color: transparent;
+    margin: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.main__img__thumbs .tooltip__inner::before {
+    right: 8px;
+    bottom: -16px;
+    border-width: 8px;
+    border-top-color: #FFF;
+    z-index: 2;
+}
+
+.main__img__thumbs .tooltip__inner::after {
+    right: 6px;
+    bottom: -20px;
+    border-width: 10px;
+    border-top-color: #DCDCDC;
+    z-index: 1;
+}
+
+.main__img__thumbs .tooltip.is-active .tooltip__inner::before,
+.main__img__thumbs .tooltip.is-active .tooltip__inner::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__img__thumbs .tooltip.is-active .tooltip__open:hover {
+    opacity: 1;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__img__thumbs .tooltip {
+        margin-left: 0;
+        order: 1 !important;
+        width: 100%;
+        margin: 0 1em;
+    }
+    .main__img__thumbs .tooltip__open {
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+        margin : 0 0 .5em auto;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__img__thumbs .tooltip {
+        margin-left: 25px;
+    }
+
+    .main__img__thumbs .tooltip__inner {
+        right: -8px;
+        bottom: 40px;
+        padding: 10px 32px 10px 10px;
+        width: 292px;
+    }
+
+    .main__img__thumbs .tooltip__inner::before {
+        right: 16px;
+    }
+
+    .main__img__thumbs .tooltip__inner::after {
+        right: 14px;
+    }
+
+    .main__img__thumbs .tooltip__close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .main__img__thumbs .tooltip__text {
+        font-size: 87.5%;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content__about - 企業紹介
+
+********************************************************************* */
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .about__content {
+        position: relative;
+    }
+    .about__toggle__input[type="checkbox"] + .about__toggle__btn {
+        z-index: 2;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 40vw;
+        margin: auto;
+        padding: .5em 0;
+        background: #000;
+        color: #FFF;
+        font-size: 1.3rem;
+        text-align: center;
+        cursor: pointer;
+        transition: .3s ease;
+        justify-content: center;
+    }
+    .about__toggle__input[type="checkbox"] + .about__toggle__btn::before {
+        content: "";
+        width: 0;
+        height: 0;
+        margin: .5em 1em 0 0;
+        border-radius: 0;
+        border-width: 6px;
+        border-style: solid;
+        border-color: #FFF transparent transparent transparent;
+        transition: .5s;
+    }
+    .about__toggle__input[type="checkbox"] + .about__toggle__btn::after {
+        content: "続きを読む";
+    }
+    .about__content > p {
+        position: relative;
+        overflow: hidden;
+        height: 8em;
+        transition: .3s ease;
+    }
+    .about__content > p::before {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 40px;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)),color-stop(50%, rgba(255,255,255,0.9)),to(rgba(255,255,255,1)));
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,1) 100%);
+    }
+    .about__toggle__input[type="checkbox"] {
+        display: none;
+    }
+    .about__toggle__input[type="checkbox"]:checked ~ .about__toggle__btn {
+        bottom: 0;
+    }
+    .about__toggle__input[type="checkbox"]:checked ~ .about__toggle__btn::before {
+        transform: rotate(180deg);
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .about__toggle__input[type="checkbox"]:checked ~ .about__toggle__btn::after {
+        content: "閉じる";
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+        border: 0;
+    }
+    .about__toggle__input[type="checkbox"]:checked ~ p {
+        height: auto;
+        padding-bottom: 4em;
+    }
+    .about__toggle__input[type="checkbox"]:checked ~ p::before {
+        display: none;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .about__toggle__input[type="checkbox"] + .about__toggle__btn {
+        display: none;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content__apply - 応募フォーム
+
+********************************************************************* */
+.main__content__apply {
+    margin: 2em auto;
+}
+.main__content__apply > form {
+    align-items: flex-start;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+    .main__content__apply > form {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+}
+
+/* ボタン
+--------------------------------------------- */
+.main__content__apply button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 1em 1em 0;
+    padding: .5em .5em;
+    letter-spacing: 1px;
+    font-size: 130%;
+    font-weight: bold;
+}
+.main__content__apply button::before {
+    content: '';
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: .5em;
+    background: url(/business/assets/img/common/icon_company_interview-wh.png) no-repeat top left / contain;
+}
+
+.main__content__apply form:nth-of-type(2) button::before {
+    background-image: url(/business/assets/img/common/mypage/icon-message-on.png);
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply button {
+        margin: .5em 0 0 0;
+        padding:.75em 1em;
+    }
+
+    .main__content__apply button br {
+        display: none;
+    }
+}
+
+/* クエスチョン
+--------------------------------------------- */
+.main__content__apply .tooltip {
+    position: relative;
+    z-index: 0;
+}
+
+.main__content__apply .tooltip__open {
+    display: block;
+    cursor: pointer;
+    padding: .5em;
+    background-color: #8FC31F;
+    color: #FFF;
+}
+
+.main__content__apply .tooltip__inner {
+    position: absolute;
+    right: -4px;
+    bottom: 34px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    padding: 6px 24px 6px 6px;
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__inner {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__content__apply .tooltip__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    color: #0081CC;
+    font-size: 180%;
+    text-align: center;
+}
+
+.main__content__apply .tooltip__text {
+    line-height: 1.4;
+}
+
+.main__content__apply .tooltip__inner::before,
+.main__content__apply .tooltip__inner::after {
+    content: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.main__content__apply .tooltip__inner::before,
+.main__content__apply .tooltip__inner::after {
+    content: "";
+    position: absolute;
+    left: auto;
+    transform: none;
+    border-style: solid;
+    border-color: transparent;
+    margin: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.main__content__apply .tooltip__inner::before {
+    right: 8px;
+    bottom: -16px;
+    border-width: 8px;
+    border-top-color: #FFF;
+    z-index: 2;
+}
+
+.main__content__apply .tooltip__inner::after {
+    right: 6px;
+    bottom: -20px;
+    border-width: 10px;
+    border-top-color: #DCDCDC;
+    z-index: 1;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__inner::before,
+.main__content__apply .tooltip.is-active .tooltip__inner::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main__content__apply .tooltip.is-active .tooltip__open:hover {
+    opacity: 1;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__content__apply .tooltip__inner {
+        right: -8px;
+        bottom: 40px;
+        padding: 10px 32px 10px 10px;
+        width: 292px;
+    }
+
+    .main__img__thumbs .tooltip__inner::before {
+        right: 16px;
+    }
+
+    .main__img__thumbs .tooltip__inner::after {
+        right: 14px;
+    }
+
+    .main__content__apply .tooltip__close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .main__content__apply .tooltip__text {
+        font-size: 87.5%;
+    }
+}
+
+/* *********************************************************************
+
+    .switchTab - 切り替えタブ
+
+********************************************************************* */
+.switchTab {
+/*    font-size: 80%;*/
+}
+
+/* *********************************************************************
+
+    .main__content__video - PR動画
+
+********************************************************************* */
+.main__content__video > section + section {
+    margin-top: 3em;
+}
+
+.main__content__video h3 {
+    margin: 0;
+    font-size: 111.11%;
+}
+
+.main__content__video picture,
+.main__content__video .video {
+    display: block;
+    margin: 1em -2.67vw;
+    background-color: #FFF;
+    line-height: 0;
+}
+.main__content__video picture img,
+.main__content__video .video video {
+    object-fit: contain;
+    width: 100vw;
+}
+.main__content__video picture img {
+    height: calc(100vw * 0.558667);
+}
+.main__content__video .video video {
+    height: calc(100vw * 0.562667);
+}
+
+/* 1027 */
+@media screen and (min-width: 1027px) {
+    .main__content__video picture,
+    .main__content__video .video {
+        margin: 1em auto;
+    }
+    .main__content__video picture img {
+        width: 970px;
+        height: 542px;
+    }
+    .main__content__video .video video {
+        width: 970px;
+        height: 545.625px;
+    }
+}
+
+/* *********************************************************************
+
+    .main__content__feature - 当社の特徴
+
+********************************************************************* */
+.main__content__feature > section + section {
+    margin-top: 3em;
+}
+
+.main__content__feature h3 {
+    margin: 1em 0;
+    font-size: 120%;
+    line-height: 1.5;
+}
+
+.main__content__feature .content {
+    text-align: center;
+}
+
+.main__content__feature picture,
+.main__content__feature .video {
+    display: block;
+    margin: 0 auto;
+    background-color: #FFF;
+    line-height: 0;
+}
+.main__content__feature picture img,
+.main__content__feature .video video {
+    object-fit: contain;
+    width: 100vw;
+}
+.main__content__feature picture img {
+    height: calc((100vw - 2.67vw - 2.67vw) * 0.389333);
+}
+.main__content__feature .video video {
+    height: calc(100vw * 0.562667);
+}
+
+/* 1027 */
+@media screen and (min-width: 1027px) {
+    .main__content__feature picture img {
+        width: 970px;
+        height: 398px;
+    }
+    .main__content__feature .video video {
+        width: 970px;
+        height: 545.625px;
+    }
+}
+
+/* *********************************************************************
+
+    footer.anchor - 戻るボタン
+
+********************************************************************* */
+footer.anchor .anchor--back {
+    width: 80%;
+    max-width: 450px;
+}

@@ -1,0 +1,117 @@
+/* メッセージ送信フォーム
+--------------------------------------------- */
+.chats__form {
+    position: relative;
+    max-width: 1000px;
+    margin: 1em auto 0;
+    text-align: right;
+}
+
+.chats__form input {
+    box-sizing: border-box;
+    font-size: 130%;
+}
+.chats__form textarea {
+    box-sizing: border-box;
+    width: 85%;
+    height: 14rem;
+    padding: .5em;
+    border: solid 1px #DBDBDB;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    -webkit-appearance : none;
+    appearance: none;
+    display: inline-block;
+    resize: vertical;
+}
+.chats__form .form__controls input[type='submit'] {
+    max-width: 250px;
+    margin-top: 1em;
+}
+.client .chats__form .form__controls input[type='submit'] {
+    /*    background-color: #0081CC;*/
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .chats__form .form__controls input[type='submit'] {
+        height: auto;
+        font-size: 110%;
+    }
+}
+
+@media all and (-ms-high-contrast:none){
+    .chats__form textarea {
+        padding: 1em .5em;
+    }
+}
+
+/* セレクトボックス
+--------------------------------------------- */
+.model_sentence {
+    margin-bottom: 1em;
+}
+
+.model_sentence .selectBox__wrapper {
+    display: inline-block;
+    width: 55%;
+    max-width: 250px;
+    border: solid 1px #DBDBDB;
+    border-radius: 5px;
+    vertical-align: middle;
+    background: #fff;
+}
+
+.model_sentence .selectBox__wrapper select {
+    width: 100%;
+    /*padding-left: 1em;*/
+    color: #5e5d5d;
+    font-size: 13px;
+    padding: .7em calc(.4em + .25em + 1.5em) .7em 1.5em;
+}
+
+.model_sentence_button {
+    display: inline-block;
+    cursor: pointer;
+    width: auto;
+    max-width: 130%;
+    margin: 10px 0 0 1em;
+    padding: 5px 22px;
+    border: none;
+    border-radius: 3px;
+    background: #0081CC;
+    color: #FFF;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.model_sentence_button:nth-child(2) {
+    margin: -21px 0 0 1em;
+}
+
+.model_sentence label {
+    font-size: 15px;
+    display: inline-block;
+    max-width: 3em;
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .chats__form {
+        margin: 0px auto 0;
+    }
+    .model_sentence {
+        margin-bottom: 10px;
+    }
+    .model_sentence .selectBox__wrapper {
+        width: 61%;
+    }
+    .model_sentence_button {
+        padding: 5px 12px;
+        margin: 10px 0 0 10px;
+    }
+    .model_sentence_button:nth-child(2) {
+        margin: -21px 0 0 10px;
+    }
+    .chats__form textarea{
+        width: 78%;
+    }
+}

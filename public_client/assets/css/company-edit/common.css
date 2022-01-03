@@ -1,0 +1,292 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /client/edit共通用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    .main__content
+
+********************************************************************* */
+.main__content {
+    margin-bottom: 7em;
+}
+
+/* *********************************************************************
+
+    タブ切替
+
+********************************************************************* */
+.switchTab ul {
+    border: none;
+}
+.switchTab li {
+    width: 50%;
+    border-top-width: 1px !important;
+}
+
+/* *********************************************************************
+
+    #edit-client - 企業編集
+
+********************************************************************* */
+#edit-client .form__table td div + div {
+    margin-top: 1em;
+}
+#edit-client .form__table td img {
+    display: block;
+    margin-bottom: .5em;
+}
+#edit-client .form__table td input[type='file'] + label,
+#edit-client .form__table td button {
+    padding: .75em 1em;
+    border-radius: 4px;
+    line-height: 1;
+    font-size: 100%;
+}
+
+#edit-client .form__table td button.delete {
+    background-color: #434343;
+}
+
+/* 本社所在地
+--------------------------------------------- */
+#edit-client .address > div:not(:first-of-type) {
+    margin-top: 1em;
+}
+#edit-client .address > div label {
+    display: block;
+    margin: 1em 0 .5em;
+}
+#edit-client .address > div label + input {
+    width: 100%;
+}
+
+/* 企業ロゴ
+--------------------------------------------- */
+.logo #logoImg {
+    width: 180px;
+    height: 180px;
+}
+
+/* 企業画像
+--------------------------------------------- */
+.company-image img {
+    margin-top: .5em;
+}
+.company-image .add {
+    display: block;
+    margin: .5em 0 0;
+    width: 70%;
+    max-width: 400px;
+}
+
+/* 動画
+--------------------------------------------- */
+.video video {
+    width: 100%;
+    max-width: 650px; /* forIE11 */
+    margin-bottom: .5em;
+}
+.video-thumbs img {
+    width: 100%;
+    max-width: 650px;
+}
+
+.video__sec h3 {
+    margin: 0 0 .5em;
+}
+.video__sec .video-thumbs {
+    margin-bottom: 1em;
+}
+.video__sec input[type='text'] {
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+/* 特徴
+--------------------------------------------- */
+.feature h3 {
+    margin: 0 0 .5em;
+}
+.feature button {
+    margin-bottom: 1em;
+}
+.feature button.add {
+    margin-top: .5em;
+    width: 70%;
+    max-width: 400px;
+}
+.feature input[type='text'] {
+    width: 100%;
+    margin-bottom: .5em;
+}
+table.form__table .feature textarea {
+    width: 100%;
+}
+
+/* ハッシュタグ
+--------------------------------------------- */
+input#tag {
+    width: calc(100% - 1em);
+}
+
+
+/* ハッシュタグカラー
+--------------------------------------------- */
+.color {
+    flex-wrap: wrap;
+}
+#edit-client .form__table td .radio__color {
+    margin-top: 0;
+}
+table.form__table .color span {
+    width: 32px;
+    padding: 2px 0;
+    border-radius: 3px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+table.form__table .radio__color + .radio__color label {
+    margin-left: .5em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    table.form__table .color span {
+        width: 50px;
+    }
+}
+@media all and (-ms-high-contrast:none){
+    .color input[type='radio']:checked + label::after {
+        top: .35em;
+        left: .22em;
+    }
+}
+
+/* 登録アカウント
+--------------------------------------------- */
+.account {
+    margin-top: 1em;
+}
+
+.account > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+}
+
+.account > div div:first-of-type {
+    width: 30%
+}
+.account > div div:nth-of-type(2) {
+    width: 70%
+}
+
+.account > div footer {
+    margin-top: .5em;
+}
+
+/* 下部ボタン
+--------------------------------------------- */
+#edit-client .form__controls .preview:not(:only-child) {
+    background-color: #434343;
+}
+/* ~767 */
+@media screen and (max-width: 767px) {
+    #edit-client .form__controls,
+    #edit-recruiting .form__controls {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    #edit-client .form__controls > *,
+    #edit-recruiting .form__controls > * {
+        width: 80%;
+        margin: 1em 0 0;
+    }
+}
+
+/*
+* select2の表示が乱れる現象の対応
+*/
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    display: contents;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-color: #dcdcdc;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border-color: #dcdcdc;
+}
+
+.invalid-form > .select2-container .select2-selection--multiple {
+    background-color: #FEEDED;
+}
+
+.select2-results__option {
+    font-size: 16px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color: #313131;
+}
+
+/* *********************************************************************
+
+    #edit-recruiting - 求人一覧
+
+********************************************************************* */
+#edit-recruiting button.add {
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    margin: auto;
+    font-size: 120%;
+}
+
+#edit-recruiting .form__modify dl {
+    display: block;
+}
+#edit-recruiting .form__modify dt {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 100%;
+}
+
+/* *********************************************************************
+
+    #edit-entry - 求人登録
+
+********************************************************************* */
+#edit-entry input[type='radio'] + label {
+    margin-right: 1em;
+}
+
+/* *********************************************************************
+
+    #edit-delete - 求人削除確認
+
+********************************************************************* */
+#edit-delete .form__controls .delete {
+    background-color: #B9010F;
+}
+#edit-delete p {
+    text-align: center;
+}
+#edit-delete p + p {
+    margin-top: 1em;
+}
+#edit-delete dl {
+    margin-top: 2em;
+    line-height: 1.5;
+    font-size: 115%;
+    text-align: center;
+}

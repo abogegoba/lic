@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /client/use/ - 使い方用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    ページ全体設定
+
+********************************************************************* */
+#main {
+    font-family: "游明朝体", "Yu Mincho", "YuMincho", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", serif;
+}
+
+#breadcrumbs ~ #main .main__content {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* 600~ */
+@media screen and (min-width: 600px) {
+    #breadcrumbs ~ #main .main__content {
+        margin-top: 0;
+    }
+}
+
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    #breadcrumbs ~ #main .main__content {
+        margin-top: 0;
+    }
+}
+
+/* *********************************************************************
+
+    キャッチ
+
+********************************************************************* */
+.main__catch {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: calc(1em + 34px + 34px) 0 1em;
+    background: #1B1B1B;
+    text-align: center;
+    text-shadow: 3px 3px 1px #303030;
+}
+.main__catch h2 {
+    letter-spacing: 2px;
+    color: #FFF;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .main__catch {
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        padding-right: calc(50vw - 50%);
+        padding-left: calc(50vw - 50%);
+    }
+}
+
+/* *********************************************************************
+
+    使い方
+
+********************************************************************* */
+.content__block {
+    align-items: center;
+    max-width: 970px;
+    margin: auto;
+}
+.content__block + .content__block {
+    margin-top: 0;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block:nth-of-type(odd) {
+        justify-content: space-between;
+    }
+    .content__block:nth-of-type(even) {
+        justify-content: space-between;
+    }
+}
+
+/* タイトル
+--------------------------------------------- */
+.content__block h2 {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+    /* VP:375 ~ 1200 : 22px ~ 40px */
+    font-size: calc( 2.2rem + 18 * (100vw - 375px) / 825);
+    font-style: italic;
+}
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .content__block h2 {
+        font-size: 2.2rem;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block h2 {
+        margin-top: 0;
+        text-align: left;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .content__block h2 {
+        font-size: 4rem;
+    }
+}
+
+/* 使い方情報
+--------------------------------------------- */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block:nth-of-type(odd) > div {
+        margin-right: 0;
+    }
+}
+
+/* アピール文
+--------------------------------------------- */
+.content__block p {
+    text-align: left;
+}
+
+/* ロゴ画像
+--------------------------------------------- */
+.content__block p+p:last-of-type::before {
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block p+p:last-of-type {
+        position: relative;
+        width: calc(100% - 150px);
+        padding-left: 150px;
+    }
+    .content__block p+p:last-of-type::before {
+        position: absolute;
+        left: 0;
+        margin: 0;
+    }
+}
+
+/* 黒背景
+--------------------------------------------- */
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .content__block picture::after {
+        content: none;
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block picture::after {
+        content: '';
+        background-color: #000;
+        top: 0;
+        width: 50vw;
+    }
+    .content__block:nth-of-type(odd) picture::after {
+        left: auto;
+        right: 0;
+    }
+}
+
+/* *********************************************************************
+
+    .footerNav - フッタ部分ナビゲーション
+
+********************************************************************* */
+#main .footerNav {
+    margin: 5rem auto 3em;
+    font-size: 90%;
+}
+#main .footerNav ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#main .footerNav a {
+    background-color: #B9010F;
+    padding: 1em .5em;
+}
+#main .footerNav a::before {
+    content: normal;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main .footerNav {
+        margin: 5.5em auto 0;
+        font-size: 110%;
+    }
+    #main .footerNav li a {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em .5em;
+        color: #FFF;
+    }
+}

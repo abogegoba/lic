@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /use/about/ - 使い方用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    ページ全体設定
+
+********************************************************************* */
+body {
+    background: #FFF;
+}
+
+#main {
+    margin: 0 -2.667vw;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 5em;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .#main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+/* *********************************************************************
+
+    .main__catch - メイン画像
+
+********************************************************************* */
+.main__catch {
+    margin-bottom: 1.7em;
+}
+
+/* *********************************************************************
+
+    使い方
+
+********************************************************************* */
+.content__block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
+}
+
+.content__block + .content__block {
+    margin-top: 6.5em;
+}
+
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .content__block {
+        font-size: 1.1rem;
+    }
+}
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .content__block {
+        /* VP:375 ~ 767 : 11px ~ 18px */
+        font-size: calc( 1.1rem + 7 * (100vw - 375px) / 362);
+    }
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block:nth-of-type(odd) {
+        justify-content: flex-end;
+    }
+    .content__block:nth-of-type(even) {
+        justify-content: flex-start;
+    }
+}
+
+/* 使い方情報
+--------------------------------------------- */
+.content__block > div {
+    box-sizing: border-box;
+    width: calc(50% - 2em);
+    max-width: 410px;
+    margin: 0 1em;
+}
+.content__block:nth-of-type(odd) > div {
+    margin-right: 2em;
+}
+.content__block:nth-of-type(even) > div {
+    margin-left: 2em;
+}
+.content__block > div p+p:last-of-type {
+    font-size: 77.77%;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block:nth-of-type(odd) > div {
+        margin-right: 2.8em;
+    }
+    .content__block:nth-of-type(even) > div {
+        margin-left: 2.8em;
+    }
+}
+
+/* タイトル
+--------------------------------------------- */
+.content__block h2 {
+    width: 80%;
+    margin: 0 auto 1.5em;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block h2 {
+        width: 100%;
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+}
+
+/* アピール文
+--------------------------------------------- */
+.content__block p {
+    margin: 1em 0;
+    line-height: 1.5;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block p {
+        text-align: center;
+    }
+}
+
+/* ロゴ画像
+--------------------------------------------- */
+.content__block p+p:last-of-type::before {
+    content: '';
+    display: block;
+    width: 40%;
+    margin: 1.5em auto;
+    padding-top: calc(37.97% * .4);
+    background: url(/assets/img/common/logo.png) no-repeat left top / contain;
+}
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .content__block p+p:last-of-type::before {
+        width: 130px;
+        height: 50px;
+        padding-top: 0;
+    }
+}
+
+/* 写真
+--------------------------------------------- */
+.content__block picture {
+    position: relative;
+    max-width: 50%;
+}
+.content__block picture img {
+    display: block;
+    vertical-align: middle;
+    margin: 0;
+    line-height: 1.0em;
+}
+.content__block picture::after {
+    content: '';
+    position: absolute;
+    top: 1.25em;
+    width: calc(100% + 1.25em);
+    height: calc(100%);
+    background: #F1F1F1;
+    z-index: -1;
+}
+.content__block:nth-of-type(odd) picture::after {
+    left: -1.25em;
+}
+.content__block:nth-of-type(even) picture::after {
+    left: 0;
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .content__block:nth-of-type(n+2) picture::after {
+        height: 80%;
+    }
+}
+
+/* *********************************************************************
+
+    .footerNav - フッタ部分ナビゲーション
+
+********************************************************************* */
+#main .footerNav {
+    margin: 7.15rem auto 0;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    #main .footerNav {
+        width: 76.8%;
+        max-width: 770px;
+        margin-top: 6.5em;
+        font-size: 110%;
+    }
+    #main .footerNav li {
+        width: 47%;
+    }
+    #main .footerNav li a {
+        padding: .5em 0;
+    }
+}

@@ -1,0 +1,489 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /mypage/video/共通要素用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/*
+
+/* *********************************************************************
+
+    .main__content
+
+********************************************************************* */
+.main__content {
+    margin-bottom: 5em;
+}
+
+/* *********************************************************************
+
+    .main__content_headline
+
+********************************************************************* */
+.main__content__headline:first-of-type {
+    margin-top: 2em;
+}
+.main__content__headline_interview-reserve:first-of-type {
+    /* margin: 0 0 2em; */
+}
+
+.main__content__headline {
+    margin: 1.25em 0 1.25em !important;
+    /* VP:375 ~ 1200 : 15px ~ 32px */
+    font-size: calc( 1.5rem + 12 * (100vw - 375px) / 825);
+}
+.main__content__headline_interview-reserve {
+    margin: 1.25em 0;
+    /* VP:375 ~ 1200 : 15px ~ 32px */
+    font-size: calc( 1.5rem + 12 * (100vw - 375px) / 825);
+}
+/* ~374 */
+@media screen and (max-width: 374px) {
+    .main__content__headline {
+        font-size: 1.5rem;
+    }
+}
+/* 1200~ */
+@media screen and (min-width: 1200px) {
+    .main__content__headline {
+        font-size: 3.2rem;
+    }
+    .main__content__headline_interview-reserve {
+        font-size: 3.2rem;
+    }
+}
+
+/* *********************************************************************
+
+    キャンセルメッセージ
+
+********************************************************************* */
+p.cancelMessage {
+    margin: 1em 0 2em;
+    text-decoration: underline;
+    color: #E60012;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    p.cancelMessage {
+        font-size: 200%;
+    }
+}
+
+/* *********************************************************************
+
+    確認メッセージ
+
+********************************************************************* */
+p.confirmMessage {
+    margin-top: 3em;
+    text-align: center;
+}
+
+/* *********************************************************************
+
+    学生選択
+
+********************************************************************* */
+.button.message {
+    display: block;
+    margin: 0 auto 2em;
+    padding: .5em 2em .5em 4em;
+    background-image: url(/assets/img/client/common/icon-video-on.png);
+    background-position: left 1.5em center;
+}
+
+/* *********************************************************************
+
+    定義リスト共通
+
+********************************************************************* */
+dl.basic dt {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    padding-right: 3%;
+}
+
+dl.basic dd {
+    width: 80%;
+}
+
+dl.basic dd p {
+    line-height: 1.5;
+}
+
+dl.basic a {
+    color: #0081cc;
+}
+
+dl.basic a:hover {
+    text-decoration: underline;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    dl.basic dt {
+        width: 25%;
+    }
+
+    dl.basic dd {
+        width: 75%;
+    }
+}
+
+/* *********************************************************************
+
+    .switchTab - タブ切替
+
+********************************************************************* */
+/* 2タブで折り返し予定がないためborder再設定 */
+.switchTab ul {
+    border: none;
+}
+
+.switchTab li {
+    border-top-width: 1px !important;
+}
+
+/* *********************************************************************
+
+    .reservation__list - 面接予約リスト
+
+********************************************************************* */
+/* タイトル：日付 */
+.reservation__list {
+    font-family: Hiragino Kaku Gothic ProN;
+}
+.reservation__list h3 {
+    padding: 1em 3%;
+    background: #EEE;
+    font-size: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.reservation__list h3::after {
+    font-family: FontAwesome;
+    content: "\f13a";
+    font-size: 2.5rem;
+    position: absolute;
+    top: 25%;
+    right: 1.5rem;
+}
+
+.reservation__grp.active .reservation__list h3::after {
+    font-family: FontAwesome;
+    content: "\f139";
+}
+/* リスト */
+.reservation__list dl.basic {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none;
+}
+
+.reservation__list dl.basic dt {
+    color: #1865F7;
+    width: 33%;
+    padding: 1.25em 3%;
+    box-sizing: border-box;
+}
+.reservation__list dl.basic dt div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.reservation__list dl.basic dt > picture,
+.reservation__list dl.basic dt > .round-img {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+.reservation__list dl.basic dt > picture img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.reservation__list dl.basic dd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    padding: 1.25em 3%;
+}
+
+.reservation__list dl.basic dd div {
+    width: 40%;
+}
+
+.reservation__list dl.basic dd p {
+    margin-left: 1em;
+}
+
+.reservation__column {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 4rem 0;
+    margin-bottom: 8.5rem;
+}
+
+.reservation__grp.active .reservation__list dl.basic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .reservation__list dl.basic dt > picture,
+    .reservation__list dl.basic dt > .round-img {
+        width: 112px;
+        height: 112px;
+    }
+    .reservation__list dl.basic dd {
+        width: calc(100% - 112px - 6%);
+    }
+    .reservation__column {
+        gap: 5rem;
+        margin-bottom: 20rem;
+    }
+}
+
+.no-count {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Hiragino Kaku Gothic ProN;
+    margin-bottom: 2.3rem;
+}
+
+/* *********************************************************************
+
+    .companyInfo
+
+********************************************************************* */
+.companyInfo {
+    line-height: 1.5;
+}
+
+.companyInfo dl {
+    display: flex;
+    margin-bottom: .5em
+}
+
+.companyInfo dt {
+    min-width: 3em;
+}
+
+.client .companyInfo {
+    display: flex;
+}
+
+.client .companyInfo .round-img {
+    width: 112px;
+    height: 112px;
+    margin-right: 1em;
+}
+
+.client .companyInfo .round-img picture {
+    width: 100%;
+    height: 100%;
+}
+
+.client .companyInfo h2 span {
+    font-size: 80%;
+}
+
+.client .companyInfo h2 + p {
+    margin: .5em 0;
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .client .companyInfo h2 span {
+        display: block;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .companyInfo {
+        display: flex;
+    }
+
+    .companyInfo > * {
+    }
+
+    .companyInfo h2 {
+        width: 45%;
+        margin-top: -.25em; /* line-heightの差異をなくす */
+    }
+
+    .client .companyInfo h2 {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .client .companyInfo .round-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* *********************************************************************
+
+    .cancelForm
+
+********************************************************************* */
+.cancelForm dl {
+    /*    border-bottom: 1px solid #DCDCDC;*/
+}
+
+.cancelForm dt {
+    margin: 2em 0 1em;
+}
+
+.cancelForm textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    padding: .5em;
+    border-color: #DCDCDC;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .cancelForm dl {
+        display: flex;
+    }
+
+    .cancelForm dl dt {
+        box-sizing: border-box;
+        width: 25%;
+        padding-left: 3%;
+    }
+
+    .cancelForm dl dd {
+        width: 75%;
+    }
+}
+
+/* *********************************************************************
+
+    .registForm
+
+********************************************************************* */
+.registForm {
+    margin-top: 2em;
+}
+
+/* *********************************************************************
+
+    ビデオ領域
+
+********************************************************************* */
+.video__interview {
+    display: block;
+    margin: 0 auto 3em auto;
+    background: #000;
+}
+
+.video__interview > video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    height: 40vh;
+    background: #000;
+    color: #FFF;
+    width: 100%
+}
+
+.video__interview img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .video__interview {
+        width: 100vw;
+        margin-left: -2.667vw;
+        margin-right: -2.667vw;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .video__interview {
+        width: 80%;
+        margin-top: 5em;
+    }
+}
+
+.switchTab--video {
+    text-align: center;
+    margin-bottom: 2em;
+}
+.switchTab--video ul {
+    width: 164px;
+    background: #313131 0% 0% no-repeat padding-box;
+    padding: 2px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+    .switchTab--video ul {
+        width: 200px;
+    }
+}
+
+.switchTab--video ul > li {
+    width: 100%;
+    border: none;
+}
+.switchTab--video ul > li a {
+    padding: 0.7rem 0;
+    border-radius: 15px;
+    min-height: 0;
+    color: #fff;
+    background-color: #313131;
+}
+
+@media screen and (min-width: 768px) {
+    .switchTab--video ul > li a {
+        padding: 2px 15px;
+    }
+}
+
+.switchTab--video ul > li.active a {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #707070;
+}
+
+.switchTab--video ul > li:not(.active) a::after {
+    content: none;
+}

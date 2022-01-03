@@ -1,0 +1,286 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    学生検索詳細通要素用CSS
+        /client/student-search/detail/
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+
+/* *********************************************************************
+
+    ヘッダ
+
+********************************************************************* */
+.result-hdr {
+    padding-right: 65px;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr {
+        padding-right: 168px;
+    }
+}
+
+/* *********************************************************************
+
+    学生画像
+
+********************************************************************* */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr .round-img,
+    .result-hdr .round-img picture {
+        width: 148px;
+        height: 148px;
+        margin-right: 1em;
+    }
+}
+
+/* *********************************************************************
+
+    学生名
+
+********************************************************************* */
+.result-hdr h3 {
+    font-size: 105%;
+}
+.result-hdr h3 span {
+    font-size: 65%;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr h3 {
+        font-size: 150%;
+        padding-top: .5em;
+    }
+}
+
+/* *********************************************************************
+
+    大学名
+
+********************************************************************* */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr p {
+        margin: .5em 1em .5em 0;
+    }
+}
+
+/* *********************************************************************
+
+    タグ
+
+********************************************************************* */
+.result-hdr > div > div > span {
+    margin-top: .2em;
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .result-hdr > div > div > span {
+        font-size: 60%;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr > div > div > span {
+        margin-top: .5em;
+    }
+}
+
+/* *********************************************************************
+
+    タグ
+
+********************************************************************* */
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .result-hdr > div > div {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: .2em 0 0;
+        font-size: 120%;
+    }
+    .result-hdr > div > div span {
+        margin-right: 1em;
+    }
+}
+
+/* *********************************************************************
+
+    体育会系・インタ
+
+********************************************************************* */
+.student-type li {
+    margin-top: .2em;
+}
+
+.student-type + .pr {
+    margin-top: 3em;
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .student-type {
+        font-size: 120%;
+    }
+
+    .student-type li {
+        margin-top: .5em;
+    }
+}
+
+/* *********************************************************************
+
+    メッセージボタン
+
+********************************************************************* */
+.button.message {
+    margin: 2em 0;
+    font-weight: bold;
+}
+
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .button.message {
+        font-size: 100%;
+    }
+}
+
+/* 768~ */
+@media screen and (min-width: 768px) {
+    .button.message {
+        padding: 0.75em 1em 0.75em 5em;
+    }
+}
+
+
+/* *********************************************************************
+
+    自己PR
+
+********************************************************************* */
+.pr {
+    font-size: 88.88%;
+}
+.pr h2 {
+    font-size: 130%;
+    margin-bottom: 1em;
+}
+.pr p {
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.pr > section {
+    margin-top: 3em;
+}
+.pr h3 {
+    margin-bottom: 1em;
+    font-size: 110%;
+}
+
+.pr .video {
+    display: block;
+    margin: 1em -2.67vw;
+    background-color: #FFF;
+    line-height: 0;
+}
+.pr .video .pr__movie {
+    object-fit: contain;
+    width: 100vw;
+    height: calc(100vw * 0.562667);
+}
+
+/* 1027 */
+@media screen and (min-width: 1027px) {
+    .pr .video {
+        margin: 1em auto;
+    }
+    .pr .video .pr__movie {
+        width: 970px;
+        height: 545.625px;
+    }
+}
+
+/* *********************************************************************
+
+    プロフィール
+
+********************************************************************* */
+.profile {
+    margin-top: 5em;
+    font-size: 88.88%;
+}
+.profile h2 {
+    font-size: 130%;
+}
+.profile dl {
+    border-top: none;
+}
+.profile dd ul li + li {
+    margin-top: 1.5em;
+}
+.profile ol + ol {
+    margin-top: 1em;
+}
+
+/* *********************************************************************
+
+    下部フォーム
+
+********************************************************************* */
+.ftr-form {
+    margin-top: 5em;
+}
+.ftr-form .form__controls {
+    justify-content: space-between;
+    width: 95%;
+    max-width: none;
+    font-size: 90%;
+}
+
+.ftr-form .form__controls input {
+    width: 48%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+}
+.ftr-form .form__controls button {
+    width: 48%;
+    margin-top: 0;
+}
+/* ~767 */
+@media screen and (max-width: 767px) {
+    .ftr-form .form__controls {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .ftr-form .form__controls {
+        width: 100%;
+    }
+    .ftr-form .form__controls input {
+        width: 100%;
+        margin: 2em 0 0 0;
+        padding: .5em;
+        order: 1;
+        font-size: 1.6rem;
+    }
+    .ftr-form .form__controls button {
+        width: 80%;
+        margin: 0;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        order: 0;
+    }
+}

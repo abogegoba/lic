@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* /////////////////////////////////////////////////////////////////////////////
+
+
+    /privacy/ - プライバシーポリシー用CSS
+
+        Since:
+        Update:
+
+
+///////////////////////////////////////////////////////////////////////////// */
+/* *********************************************************************
+
+    .content__privacy
+
+********************************************************************* */
+.content__privacy > dt {
+    display: list-item;
+    list-style: outside decimal;
+    margin-left: 1.5em;
+}
+
+.content__privacy dd {
+    margin-left: 1.5em;
+}
+
+/* 第2階層
+--------------------------------------------- */
+.content__privacy > dd dl,
+.content__privacy > dd dt {
+    display: inline;
+}
+
+/* (壱)(弐)リスト
+--------------------------------------------- */
+.list__oldkanji > * {
+    display: inline;
+}
+.list__oldkanji::before {
+    display: inline;
+}
+.list__oldkanji:first-of-type::before {
+    content: '(壱) ';
+}
+.list__oldkanji:nth-of-type(2)::before {
+    content: '(弐) ';
+}
+
+/* 以上
+--------------------------------------------- */
+.content__privacy + p:last-of-type {
+    text-align: right;
+}
+
+/* 個人情報保護法追加内容
+--------------------------------------------- */
+
+.l-container {
+    width: 980px;
+    margin: 0 auto;
+}
+.mod-section {
+    margin: 0 0 40px;
+}
+.mod-p {
+    margin: 0 0 36px;
+    line-height: 1.6;
+}
+.mod-heading4 {
+    margin: 50px 0 20px;
+    padding-left: 12px;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+.mod-table2 {
+    width: 100%;
+    margin: 0 0 32px;
+    font-size: 1.3rem;
+}
+.mod-table2 caption {
+    text-align: left;
+    padding: 0 0 5px;
+}
+.mod-table2 tr {
+    border-top: 2px solid #dee2e7;
+    border-bottom: 2px solid #dee2e7;
+}
+
+.mod-table2 tbody tr td:last-child {
+    border: 0;
+}
+
+.mod-table2 tbody tr td {
+    line-height: 1.5;
+    border-right: 1px solid #dee2e7;
+    font-size: 1.2rem;
+}
+
+.mod-table2 td {
+    padding: 15px 10px;
+    vertical-align: middle;
+}
+
+.mod-table2 thead th {
+    border-right: 1px solid #dee2e7;
+    background: #edf6f3;
+    text-align: center;
+    line-height: 1.2;
+}
+.mod-table2 th {
+    text-align: left;
+    padding: 15px 10px;
+    vertical-align: middle;
+}
+.mod-ol {
+    margin: 0 0 10px 1.5em;
+    list-style-type: decimal;
+}
+.mod-ol > li {
+    margin: 0 0 10px;
+    line-height: 1.5;
+}
+
+.mod-heading5 {
+    margin: 40px 0 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+.sp-sec{
+  display: none;
+}
+}
+
+@media screen and (max-width: 768px) {
+
+  .pc-sec{
+    display: none;
+  }
+
+  .l-content {
+      padding: 0 12px 15px;
+  }
+
+  .l-container {
+      width: auto;
+  }
+  .mod-p {
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+
+  .mod-ol.with-brackets {
+    list-style-type: none;
+    list-style-position: inside;
+    margin-left: 1.5rem;
+    font-size:14px;
+  }
+
+  .mod-ol.with-brackets li:before {
+    content: counter(cnt);
+  }
+
+  .mod-ol.with-brackets li:before{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    /* padding-right: 0.4em;     */
+    display: inline-block;
+    /* line-height: 17px; */
+    text-align: center;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    border: 1px solid #000;
+  }
+
+  .mod-ol.with-brackets > li {
+    position: relative;
+    padding-left: 2em;
+    counter-increment: cnt;
+  }
+
+  .mod-ol.kiyaku-brackets {
+    list-style-type: none;
+    list-style-position: inside;
+    margin-left: 1.5rem;
+    font-size:14px;
+  }
+
+  .mod-ol.kiyaku-brackets li:before {
+    content: counter(cnt) ".";
+  }
+
+  .mod-ol.kiyaku-brackets li:before{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    display: inline-block;
+    text-align: center;
+
+  }
+
+  .mod-ol.kiyaku-brackets > li {
+    position: relative;
+    padding-left: 2em;
+    counter-increment: cnt;
+  }
+
+
+  .mod-heading4 {
+    margin: 32px 0 10px;
+    font-size: 1.5rem;
+    background-size: 4px 20px;
+  }
+  .mod-table2 tbody tr td {
+    font-size: 0.8rem;
+  }
+
+}
