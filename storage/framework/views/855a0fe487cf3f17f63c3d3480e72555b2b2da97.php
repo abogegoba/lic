@@ -1,0 +1,152 @@
+<?php $__env->startSection('title','入力情報の確認│会員登録｜LinkT(リンクト)'); ?>
+
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/entry/common.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/entry/confirm/index.css')); ?>">
+    <style>
+        @media  only screen and (max-width: 413px) and (min-width: 320px){
+            input[type='checkbox'] + label::before {width: 30px;}
+            input[type='checkbox']:checked + label::after {top: 5px;}
+        }
+        @media  only screen and (max-width: 639px) and (min-width: 414px){
+            input[type='checkbox'] + label::before {width: 24px;}
+            input[type='checkbox']:checked + label::after {top: 5px;}
+        }
+        @media  only screen and (max-width: 767px) and (min-width: 640px){
+            input[type='checkbox']:checked + label::after {top: -8px;}
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <header id="main__hdr">
+        <h1>入力内容の確認</h1>
+    </header>
+    <div id="main__content">
+        <form class="form__confirm">
+            <dl>
+                <dt>氏名</dt>
+                <dd><?php echo e($data->get('lastName')); ?>　<?php echo e($data->get('firstName')); ?>（<?php echo e($data->get('lastNameKana')); ?>　<?php echo e($data->get('firstNameKana')); ?>）</dd>
+                <dt>English Name</dt>
+                <dd><?php echo e($data->get('englishName')); ?></dd>
+                <dt>生年月日</dt>
+                <dd><?php echo e($data->get('birthday')); ?></dd>
+                <dt>証明写真</dt>
+                <?php if($data->get('idPhotoUrl')): ?>
+                    <dd><img src="<?php echo e($data->get('idPhotoUrl')); ?>" alt="証明写真"></dd>
+                <?php else: ?>
+                    <dd><img src="<?php echo e(asset('img/mypage/profile/img_self.jpg')); ?>" alt="証明写真"></dd>
+                <?php endif; ?>
+            </dl>
+            <input type="submit" value="修正" class="form__button js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-one')); ?>">
+        </form>
+        <form class="form__confirm">
+            <dl>
+                <dt>国籍</dt>
+                <dd><?php echo e($data->get('country')); ?></dd>
+                <dt>現住所</dt>
+                <dd><?php echo e($data->get('prefecture')); ?><?php echo e($data->get('city')); ?><br><?php echo e($data->get('blockNumber')); ?></dd>
+                <dt>連絡先</dt>
+                <dd><?php echo e($data->get('phoneNumber')); ?></dd>
+            </dl>
+            <input type="submit" value="修正" class="form__button js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-two')); ?>">
+        </form>
+        <form class="form__confirm">
+            <dl>
+                <dt>学校情報</dt>
+                <dd><?php echo e($data->get('schoolType')); ?>／<?php echo e($data->get('facultyType')); ?>
+
+                    <br><?php echo e($data->get('name')); ?>
+
+                    <br><?php echo e($data->get('departmentName')); ?>
+
+                    <br><?php echo e($data->get('graduationPeriodYear')); ?>
+
+                    年<?php echo e($data->get('graduationPeriodMonth')); ?>月<?php echo e($data->get('graduationPeriodTypeLabel')); ?>
+
+                </dd>
+            </dl>
+            <input type="submit" value="修正" class="form__button js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-three')); ?>">
+            <?php if(!empty($errors) && !empty($errors->get("business_exception")['business.cant_store_graduation_period'])): ?>
+                <div class="error">
+                    <?php echo $__env->make('front.common.business_error', ['errors'=>$errors, 'target'=>'cant_store_graduation_period'], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            <?php endif; ?>
+
+        </form>
+        <form class="form__confirm">
+            <dl>
+                <dt>志望情報</dt>
+                <dd>
+                    <h2>志望業種</h2>
+                    <p><?php echo e($data->get('industry1')); ?>
+
+                        <?php if(!empty($data->get('industry1')) && !empty($data->get('industry2'))): ?>
+                            /
+                        <?php endif; ?>
+                        <?php echo e($data->get('industry2')); ?>
+
+                        <?php if( !empty($data->get('industry3')&&(!empty($data->get('industry2')) || !empty($data->get('industry1'))))): ?>
+                            /
+                        <?php endif; ?>
+                        <?php echo e($data->get('industry3')); ?></p>
+                    <h2>志望勤務地</h2>
+                    <p><?php echo e($data->get('location1')); ?>
+
+                        <?php if(!empty($data->get('location1')) && !empty($data->get('location2'))): ?>
+                            /
+                        <?php endif; ?>
+                        <?php echo e($data->get('location2')); ?>
+
+                        <?php if( !empty($data->get('location3')&&(!empty($data->get('location2')) || !empty($data->get('location1'))))): ?>
+                            /
+                        <?php endif; ?>
+                        <?php echo e($data->get('location3')); ?></p>
+                    <h2>インターン</h2>
+                    <p><?php echo e($data->get('intern')); ?></p>
+                    <h2>就活イベントやその他就職活動に関 する情報取得について</h2>
+                    <p><?php echo e($data->get('recruitInfo')); ?></p>
+                </dd>
+            </dl>
+            <input type="submit" value="修正" class="form__button js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-four')); ?>">
+        </form>
+        <form class="form__confirm">
+            <dl>
+                <dt>ID・パスワード</dt>
+                <dd>
+                    <p><?php echo e($data->get('mailAddress')); ?></p>
+                    <p class="notice">※メールアドレスをパスワードとして利用します</p>
+                    <p class="notice">※パスワードはご入力いただいたものです。</p>
+                    <p class="notice">(セキュリティの観点より本画面では非表示です。）</p>
+                </dd>
+            </dl>
+            <input type="submit" value="修正" class="form__button js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-five')); ?>">
+            <?php if(!empty($errors) && !empty($errors->get("business_exception")['business.duplication.mail_address'])): ?>
+                <div class="error">
+                    <?php echo $__env->make('front.common.business_error', ['errors'=>$errors, 'target'=>'duplication.mail_address'], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            <?php endif; ?>
+        </form>
+        <?php echo e(Form::open(['url'=>route('front.overseas-member-entry.store')])); ?>
+
+        <div class="terms invalid-form">
+            <p>新規会員登録の際は「ご利用規約」を必ずお読みいただき、<br class="pc">ご利用規約にご同意の上、登録へお進みください。</p>
+            <ul>
+                <li><a href="<?php echo e(route('front.static.term')); ?>">ご利用規約</a></li>
+                <li><a href="<?php echo e(route('front.static.privacy')); ?>">取り扱いについて</a></li>
+            </ul>
+            <div class="temrs__consent">
+                <?php echo e(Form::checkbox('agreement', 1, '', ["id"=>"agreement"])); ?><label for="agreement">会員規約および取り扱いについて同意する</label>
+            </div>
+            <?php echo $__env->make('front.common.input_error', ['errors' => $errors, 'targets' => ['agreement']], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <div class="form__controls">
+            <input type="button" value="戻る" class="form__controls__prev js-btn-link" data-href="<?php echo e(route('front.overseas-member-entry.revise-five')); ?>">
+            <input type="submit" value="登録する" class="form__controls__register">
+        </div>
+        <?php echo e(Form::close()); ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.common.root', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
